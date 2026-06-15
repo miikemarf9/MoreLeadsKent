@@ -81,6 +81,24 @@
       }
     }
     </script>
+
+    <style>
+        @keyframes rank1pop {
+            0%   { transform: scale(1); }
+            50%  { transform: scale(1.35); }
+            100% { transform: scale(1); }
+        }
+        .rank-pop {
+            display: inline-block;
+            animation: rank1pop 0.45s ease-out;
+        }
+        .google-results .result-item {
+            position: absolute;
+            width: calc(100% - 30px);
+            left: 15px;
+            transition: top 1s cubic-bezier(0.25, 1, 0.5, 1), background 1s, border-color 1s;
+        }
+    </style>
 </head>
 <body>
 
@@ -116,19 +134,19 @@
                             <div class="search-bar" aria-label="Search bar showing 'local business near me'">local business near me</div>
                         </div>
                         <div class="google-results" style="position: relative; overflow: hidden; height: 260px;">
-                            <div class="result-item stable" id="position-1">
+                            <div class="result-item stable" id="position-1" style="top: 0px;">
                                 <span class="map-pin" aria-label="Map pin">📍</span>
                                 <div><strong>Big Corporate Competitor</strong><p>⭐⭐⭐⭐⭐ (3 reviews) · High Agency Fees</p></div>
                             </div>
-                            <div class="result-item animated-rank" id="target-listing">
+                            <div class="result-item animated-rank" id="target-listing" style="top: 150px; z-index: 5;">
                                 <span class="map-pin accent-pin" aria-label="Map pin highlighting your business">📍</span>
                                 <div>
                                     <strong id="company-name">Your Local Business</strong>
                                     <p>⭐⭐⭐⭐⭐ (48 reviews) · Live & Managed by Us</p>
                                 </div>
-                                <span class="rank-badge" id="rank-number">😞</span>
+                                <span class="rank-badge" id="rank-number"><span class="rank-inner" id="rank-inner">😞</span></span>
                             </div>
-                            <div class="result-item stable" id="position-3">
+                            <div class="result-item stable" id="position-3" style="top: 75px;">
                                 <span class="map-pin" aria-label="Map pin">📍</span>
                                 <div><strong>Established Franchise Ltd</strong><p>⭐⭐⭐⭐ (12 reviews) · Out-of-town Brand</p></div>
                             </div>
@@ -277,47 +295,66 @@
     </footer>
 
     <script>
-        // Multi-step Ranking Animation with Position Swaps
+        // Multi-step Ranking Animation with Position Swaps (3 listings, full cycle)
         document.addEventListener("DOMContentLoaded", () => {
-            const targetListing = document.getElementById("target-listing");
-            const rankNumber = document.getElementById("rank-number");
             const position1 = document.getElementById("position-1");
+            const targetListing = document.getElementById("target-listing");
             const position3 = document.getElementById("position-3");
-            
-            if (targetListing && rankNumber && position1 && position3) {
+            const rankNumber = document.getElementById("rank-number");
+            const rankInner = document.getElementById("rank-inner");
+
+            // Height of one row including spacing. Adjust if rows overlap/gap on your live site.
+            const ROW_HEIGHT = 75;
+
+            if (position1 && targetListing && position3 && rankNumber && rankInner) {
+
+                function popIcon(newContent) {
+                    rankInner.classList.remove("rank-pop");
+                    rankInner.textContent = newContent;
+                    void rankInner.offsetWidth; // restart animation
+                    rankInner.classList.add("rank-pop");
+                }
+
                 function animateRanking() {
-                    // Start: Your business at position 3 (unhappy 😞)
-                    targetListing.style.transform = "translateY(0)";
+                    // STATE 1 (0s): reset to start
+                    // Position 1: Big Corporate Competitor (top)
+                    // Position 2: Established Franchise Ltd
+                    // Position 3: Your business (😞)
+                    position1.style.top = "0px";
+                    position3.style.top = ROW_HEIGHT + "px";
+                    targetListing.style.top = (ROW_HEIGHT * 2) + "px";
+
                     targetListing.style.background = "var(--white)";
                     targetListing.style.borderColor = "#e5e0d8";
-                    targetListing.classList.remove("rank-1-pop");
-                    rankNumber.textContent = "😞";
                     rankNumber.style.background = "#e5e0d8";
                     rankNumber.style.color = "var(--navy-dark)";
-                    
-                    // After 1 second: Move to position 2 (surprised 😮)
+                    rankInner.textContent = "😞";
+                    rankInner.classList.remove("rank-pop");
+
+                    // STATE 2 (after 1s): your business -> position 2 (😮)
+                    // Established Franchise drops to position 3
                     setTimeout(() => {
-                        targetListing.style.transform = "translateY(-68px)";
+                        position3.style.top = (ROW_HEIGHT * 2) + "px";
+                        targetListing.style.top = ROW_HEIGHT + "px";
+                        popIcon("😮");
+                    }, 1000);
+
+                    // STATE 3 (after 2 more seconds, 3s total): your business -> position 1 (#1, pop)
+                    // Big Corporate Competitor drops to position 2
+                    setTimeout(() => {
+                        position1.style.top = ROW_HEIGHT + "px";
+                        targetListing.style.top = "0px";
                         targetListing.style.background = "#fffbf7";
                         targetListing.style.borderColor = "#E0562F";
-                        rankNumber.textContent = "😮";
-                    }, 1000);
-                    
-                    // After 3 more seconds (4s total): Move to position 1 (#1 RANK with pop effect)
-                    setTimeout(() => {
-                        targetListing.style.transform = "translateY(-136px)";
-                        rankNumber.textContent = "#1";
                         rankNumber.style.background = "#E0562F";
                         rankNumber.style.color = "#FFFFFF";
-                        rankNumber.style.fontWeight = "900";
-                        targetListing.classList.add("rank-1-pop");
-                    }, 4000);
-                    
-                    // After 3 more seconds at top (7s total): Reset and repeat
-                    setTimeout(animateRanking, 7000);
+                        popIcon("#1");
+                    }, 3000);
+
+                    // Hold at top, then restart (6s total cycle)
+                    setTimeout(animateRanking, 6000);
                 }
-                
-                // Start the loop
+
                 animateRanking();
             }
         });
