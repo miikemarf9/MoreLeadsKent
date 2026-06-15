@@ -110,25 +110,25 @@
                 </div>
                 
                 <div class="hero-visual">
-                    <div class="google-box" role="img" aria-label="Google Maps ranking visualisation showing business at top position">
+                    <div class="google-box" role="img" aria-label="Google Maps ranking visualisation showing business climbing to top position">
                         <div class="google-header">
                             <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
                             <div class="search-bar" aria-label="Search bar showing 'local business near me'">local business near me</div>
                         </div>
                         <div class="google-results" style="position: relative; overflow: hidden; height: 260px;">
-                            <div class="result-item stable">
+                            <div class="result-item stable" id="position-1">
                                 <span class="map-pin" aria-label="Map pin">📍</span>
                                 <div><strong>Big Corporate Competitor</strong><p>⭐⭐⭐⭐⭐ (3 reviews) · High Agency Fees</p></div>
                             </div>
-                            <div class="result-item animated-rank" id="target-listing" style="position: absolute; width: calc(100% - 30px); top: 95px; left: 15px; z-index: 5; transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), background 1.2s, border-color 1.2s;">
+                            <div class="result-item animated-rank" id="target-listing">
                                 <span class="map-pin accent-pin" aria-label="Map pin highlighting your business">📍</span>
                                 <div>
                                     <strong id="company-name">Your Local Business</strong>
                                     <p>⭐⭐⭐⭐⭐ (48 reviews) · Live & Managed by Us</p>
                                 </div>
-                                <span class="rank-badge" id="rank-number" style="float: right;">😞 Page 2</span>
+                                <span class="rank-badge" id="rank-number">😞</span>
                             </div>
-                            <div class="result-item stable" style="margin-top: 75px;">
+                            <div class="result-item stable" id="position-3">
                                 <span class="map-pin" aria-label="Map pin">📍</span>
                                 <div><strong>Established Franchise Ltd</strong><p>⭐⭐⭐⭐ (12 reviews) · Out-of-town Brand</p></div>
                             </div>
@@ -277,34 +277,44 @@
     </footer>
 
     <script>
-        // Google Ranking Mockup Animation Loop - Continuous Cycling
+        // Multi-step Ranking Animation with Position Swaps
         document.addEventListener("DOMContentLoaded", () => {
             const targetListing = document.getElementById("target-listing");
             const rankNumber = document.getElementById("rank-number");
+            const position1 = document.getElementById("position-1");
+            const position3 = document.getElementById("position-3");
             
-            if (targetListing && rankNumber) {
-                // Define animation states
+            if (targetListing && rankNumber && position1 && position3) {
                 function animateRanking() {
-                    // State 1: Reset to starting position (Page 2, unhappy)
+                    // Start: Your business at position 3 (unhappy 😞)
                     targetListing.style.transform = "translateY(0)";
                     targetListing.style.background = "var(--white)";
                     targetListing.style.borderColor = "#e5e0d8";
-                    rankNumber.textContent = "😞 Page 2";
+                    targetListing.classList.remove("rank-1-pop");
+                    rankNumber.textContent = "😞";
                     rankNumber.style.background = "#e5e0d8";
                     rankNumber.style.color = "var(--navy-dark)";
                     
-                    // State 2: After 2 seconds, race to top (#1)
+                    // After 1 second: Move to position 2 (surprised 😮)
                     setTimeout(() => {
                         targetListing.style.transform = "translateY(-68px)";
                         targetListing.style.background = "#fffbf7";
                         targetListing.style.borderColor = "#E0562F";
-                        rankNumber.textContent = "#1 RANK";
+                        rankNumber.textContent = "😮";
+                    }, 1000);
+                    
+                    // After 3 more seconds (4s total): Move to position 1 (#1 RANK with pop effect)
+                    setTimeout(() => {
+                        targetListing.style.transform = "translateY(-136px)";
+                        rankNumber.textContent = "#1";
                         rankNumber.style.background = "#E0562F";
                         rankNumber.style.color = "#FFFFFF";
-                    }, 2000);
+                        rankNumber.style.fontWeight = "900";
+                        targetListing.classList.add("rank-1-pop");
+                    }, 4000);
                     
-                    // State 3: After animation completes + 3 seconds, repeat
-                    setTimeout(animateRanking, 5200);
+                    // After 3 more seconds at top (7s total): Reset and repeat
+                    setTimeout(animateRanking, 7000);
                 }
                 
                 // Start the loop
