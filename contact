@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | MoreLeads Kent</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MoreLeads <span>Kent</span></a>
+            <nav>
+                <a href="index.html#what-we-do">What We Do</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#faqs">FAQs</a>
+            </nav>
+        </div>
+    </header>
+
+    <section style="background: white; min-height: 80vh;">
+        <div class="container max-width-md text-center">
+            <h1>Claim Your Free Local Search Audit</h1>
+            <p class="subtitle">Give us 24 hours. We will review your business name, address settings, profile gaps, and tell you exactly why your local competitors are ranking higher than you.</p>
+            
+            <form action="https://formspree.io/f/placeholder" method="POST" style="background: #F7F5F1; padding: 40px; border-radius: 6px; border: 1px solid #e5e0d8; margin-bottom: 40px;">
+                <div class="form-group">
+                    <label for="bizname">Your Registered Business Name</label>
+                    <input type="text" id="bizname" name="business_name" placeholder="e.g. Sandwich Plumbing Services" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Best Contact Mobile Phone Number</label>
+                    <input type="tel" id="phone" name="phone_number" placeholder="e.g. 07496797189" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Any Specific Competitor You Want to Beat?</label>
+                    <textarea id="notes" name="message" rows="4" placeholder="Tell us if there's a specific local map profile taking your jobs..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; border: none; font-size: 1.1rem;">Submit Free Audit Request</button>
+            </form>
+
+            <div style="border-top: 1px solid #e5e0d8; padding-top: 30px; margin-top: 30px;">
+                <h3>Prefer a direct phone conversation?</h3>
+                <p style="margin-top: 10px;">Call directly: <a href="tel:07496797189" style="color: var(--accent-red); font-weight: bold; text-decoration: none;">07496797189</a></p>
+                <p style="font-size: 0.9rem; color: #707070;">Or drop inside the workshop office at Foxborough Furniture, Foxborough Hill, Eastry, CT13 0NY.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 MoreLeads Kent. Run alongside Foxborough Furniture.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
