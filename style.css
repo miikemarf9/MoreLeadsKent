@@ -148,7 +148,7 @@ h2 { font-size: 2.2rem; margin-bottom: 15px; }
 .pricing-card ul { list-style: none; margin: 20px 0; text-align: left; font-size: 0.95rem; }
 .pricing-card ul li { margin-bottom: 10px; }
 .pricing-card ul li::before { content: "✓ "; color: var(--accent-red); font-weight: bold; margin-right: 5px; }
-.pricing-card.featured { border: 3px solid var(--accent-red); box-shadow: 0 10px 25px rgba(224, 86, 47, 0.1); }
+.pricing-card.featured { box-shadow: 0 10px 25px rgba(224, 86, 47, 0.1); }
 .popular { background: var(--accent-red); color: var(--white); padding: 4px 12px; border-radius: 20px; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; }
 
 /* About Grid */
