@@ -1,3 +1,19 @@
+/* New split choice layout for home page */
+.split-box-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+    .split-box-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Everything else below stays the same */
+
 /* Custom Reset & Typography Base */
 * {
     margin: 0;
