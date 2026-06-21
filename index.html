@@ -83,6 +83,7 @@
     </script>
 
     <style>
+        /* ── Ranking Animation ── */
         @keyframes rank1pop {
             0%   { transform: scale(1); }
             50%  { transform: scale(1.35); }
@@ -98,21 +99,86 @@
             left: 15px;
             transition: top 1s cubic-bezier(0.25, 1, 0.5, 1), background 1s, border-color 1s;
         }
+
+        /* ── Hamburger button ── */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 300;
+        }
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--navy-dark);
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ── Mobile fullscreen overlay menu ── */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--white, #fff);
+            z-index: 200;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy-dark);
+            text-decoration: none;
+        }
+        .mobile-menu a.btn {
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            header nav  { display: none; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-    <div class="container nav-container">
-        <a href="index.html" class="logo" title="MoreLeads Kent - Local Web & SEO">MoreLeads <span>Kent</span></a>
-        <nav aria-label="Primary Navigation">
-            <a href="web-design.html">Web Design & Maintenance</a>
-            <a href="seo-services.html">SEO & Lead Generation</a>
-            <a href="#about">The Backstory</a>
-            <a href="#faqs">FAQs</a>
-        </nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo" title="MoreLeads Kent - Local Web & SEO">MoreLeads <span>Kent</span></a>
+            <nav aria-label="Primary Navigation">
+                <a href="web-design.html">Web Design & Maintenance</a>
+                <a href="seo-services.html">SEO & Lead Generation</a>
+                <a href="#about">The Backstory</a>
+                <a href="#faqs">FAQs</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile fullscreen menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile Navigation">
+        <a href="web-design.html" class="mob-link">Web Design & Maintenance</a>
+        <a href="seo-services.html" class="mob-link">SEO & Lead Generation</a>
+        <a href="#about" class="mob-link">The Backstory</a>
+        <a href="#faqs" class="mob-link">FAQs</a>
+        <a href="contact.html" class="btn btn-primary mob-link">Request Site Review</a>
     </div>
-</header>
 
     <main>
         <section class="hero" aria-label="Hero Section">
@@ -132,7 +198,7 @@
                             <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
                             <div class="search-bar" aria-label="Search bar showing 'local business near me'">local business near me</div>
                         </div>
-                        <div class="google-results" style="position: relative; overflow: hidden; height: 260px;">
+                        <div class="google-results" id="google-results" style="position: relative; overflow: hidden; height: 260px;">
                             <div class="result-item stable" id="position-1" style="top: 0px;">
                                 <span class="map-pin" aria-label="Map pin">📍</span>
                                 <div><strong>Big Corporate Competitor</strong><p>⭐⭐⭐⭐⭐ (3 reviews) · High Agency Fees</p></div>
@@ -294,78 +360,112 @@
     </footer>
 
     <script>
-        // Multi-step Ranking Animation with Position Swaps (3 listings, full cycle)
-        document.addEventListener("DOMContentLoaded", () => {
-            const position1 = document.getElementById("position-1");
-            const targetListing = document.getElementById("target-listing");
-            const position3 = document.getElementById("position-3");
-            const rankNumber = document.getElementById("rank-number");
-            const rankInner = document.getElementById("rank-inner");
+        // ── Hamburger Menu ──
+        const hamburger   = document.getElementById('hamburger');
+        const mobileMenu  = document.getElementById('mobile-menu');
+        const mobLinks    = mobileMenu.querySelectorAll('.mob-link');
 
-            // Height of one row including spacing. Adjust if rows overlap/gap on your live site.
-            const ROW_HEIGHT = 75;
-
-            if (position1 && targetListing && position3 && rankNumber && rankInner) {
-
-                function popIcon(newContent) {
-                    rankInner.classList.remove("rank-pop");
-                    rankInner.textContent = newContent;
-                    void rankInner.offsetWidth; // restart animation
-                    rankInner.classList.add("rank-pop");
-                }
-
-                function animateRanking() {
-                    // STATE 1 (0s): reset to start
-                    // Position 1: Big Corporate Competitor (top)
-                    // Position 2: Established Franchise Ltd
-                    // Position 3: Your business (😞)
-                    position1.style.top = "0px";
-                    position3.style.top = ROW_HEIGHT + "px";
-                    targetListing.style.top = (ROW_HEIGHT * 2) + "px";
-
-                    targetListing.style.background = "var(--white)";
-                    targetListing.style.borderColor = "#e5e0d8";
-                    rankNumber.style.background = "#e5e0d8";
-                    rankNumber.style.color = "var(--navy-dark)";
-                    rankInner.textContent = "😞";
-                    rankInner.classList.remove("rank-pop");
-
-                    // STATE 2 (after 1s): your business -> position 2 (😮)
-                    // Established Franchise drops to position 3
-                    setTimeout(() => {
-                        position3.style.top = (ROW_HEIGHT * 2) + "px";
-                        targetListing.style.top = ROW_HEIGHT + "px";
-                        popIcon("😮");
-                    }, 1000);
-
-                    // STATE 3 (after 2 more seconds, 3s total): your business -> position 1 (#1, pop)
-                    // Big Corporate Competitor drops to position 2
-                    setTimeout(() => {
-                        position1.style.top = ROW_HEIGHT + "px";
-                        targetListing.style.top = "0px";
-                        targetListing.style.background = "#fffbf7";
-                        targetListing.style.borderColor = "#E0562F";
-                        rankNumber.style.background = "#E0562F";
-                        rankNumber.style.color = "#FFFFFF";
-                        popIcon("#1");
-                    }, 3000);
-
-                    // Hold at top, then restart (6s total cycle)
-                    setTimeout(animateRanking, 6000);
-                }
-
-                animateRanking();
-            }
+        hamburger.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         });
 
-        // Simple, lightweight FAQ Accordion Toggles with accessibility
-        const toggles = document.querySelectorAll('.faq-toggle');
-        toggles.forEach(toggle => {
+        mobLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ── Ranking Animation ──
+        // Auto-measures actual row height so it works correctly on all screen sizes
+        document.addEventListener("DOMContentLoaded", () => {
+            const position1     = document.getElementById("position-1");
+            const targetListing = document.getElementById("target-listing");
+            const position3     = document.getElementById("position-3");
+            const rankNumber    = document.getElementById("rank-number");
+            const rankInner     = document.getElementById("rank-inner");
+            const resultsBox    = document.getElementById("google-results");
+
+            if (!position1 || !targetListing || !position3 || !rankNumber || !rankInner) return;
+
+            let loopTimer, t1, t2;
+
+            function getRowHeight() {
+                // Measure the live rendered height of a row + any margin beneath it
+                const style = window.getComputedStyle(position1);
+                const marginBottom = parseFloat(style.marginBottom) || 0;
+                return Math.ceil(position1.offsetHeight + marginBottom + 4);
+            }
+
+            function popIcon(text) {
+                rankInner.classList.remove("rank-pop");
+                rankInner.textContent = text;
+                void rankInner.offsetWidth; // force reflow to restart animation
+                rankInner.classList.add("rank-pop");
+            }
+
+            function animateRanking() {
+                const R = getRowHeight();
+
+                // Expand container to fit 3 rows exactly
+                resultsBox.style.height = (R * 3 + 4) + "px";
+
+                // STATE 1: reset — your business at bottom (😞)
+                position1.style.top       = "0px";
+                position3.style.top       = R + "px";
+                targetListing.style.top   = (R * 2) + "px";
+
+                targetListing.style.background  = "var(--white)";
+                targetListing.style.borderColor = "#e5e0d8";
+                rankNumber.style.background     = "#e5e0d8";
+                rankNumber.style.color          = "var(--navy-dark)";
+                rankInner.textContent           = "😞";
+                rankInner.classList.remove("rank-pop");
+
+                // STATE 2 (1s): your business -> position 2 (😮), franchise drops to 3
+                t1 = setTimeout(() => {
+                    position3.style.top     = (R * 2) + "px";
+                    targetListing.style.top = R + "px";
+                    popIcon("😮");
+                }, 1000);
+
+                // STATE 3 (3s): your business -> position 1 (#1 + pop), corporate drops to 2
+                t2 = setTimeout(() => {
+                    position1.style.top             = R + "px";
+                    targetListing.style.top         = "0px";
+                    targetListing.style.background  = "#fffbf7";
+                    targetListing.style.borderColor = "#E0562F";
+                    rankNumber.style.background     = "#E0562F";
+                    rankNumber.style.color          = "#FFFFFF";
+                    popIcon("#1");
+                }, 3000);
+
+                // Hold at top then restart — 6s total cycle
+                loopTimer = setTimeout(animateRanking, 6000);
+            }
+
+            animateRanking();
+
+            // Recalculate on orientation change / resize
+            window.addEventListener('resize', () => {
+                clearTimeout(t1);
+                clearTimeout(t2);
+                clearTimeout(loopTimer);
+                animateRanking();
+            });
+        });
+
+        // ── FAQ Accordion ──
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
             toggle.addEventListener('click', () => {
-                const content = toggle.nextElementSibling;
-                const icon = toggle.querySelector('span');
+                const content    = toggle.nextElementSibling;
+                const icon       = toggle.querySelector('span');
                 const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-                
                 if (isExpanded) {
                     content.style.maxHeight = null;
                     icon.textContent = '+';
