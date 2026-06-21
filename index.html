@@ -100,7 +100,7 @@
             transition: top 1s cubic-bezier(0.25, 1, 0.5, 1), background 1s, border-color 1s;
         }
 
-        /* ── Sticky Header Adjustment ── */
+        /* ── Sticky Header & Direct Row Fix ── */
         header {
             position: sticky;
             top: 0;
@@ -111,13 +111,17 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
         
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 15px;
-            box-sizing: border-box;
+        /* Forces side-by-side row alignment on desktop and mobile alike, ignoring style.css */
+        header .nav-container {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px !important;
+            box-sizing: border-box !important;
         }
 
         /* ── Hamburger button ── */
@@ -169,8 +173,8 @@
         }
 
         @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            header nav  { display: none; }
+            .hamburger { display: flex !important; }
+            header nav  { display: none !important; }
         }
     </style>
 </head>
@@ -178,7 +182,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo" title="MoreLeads Kent - Local Web & SEO" style="text-decoration: none; font-weight: bold; color: inherit;">MoreLeads <span style="color: var(--accent-red, #E0562F);">Kent</span></a>
+            <a href="index.html" class="logo" title="MoreLeads Kent - Local Web & SEO" style="text-decoration: none; font-weight: bold; color: inherit; font-size: 1.3rem;">MoreLeads <span style="color: var(--accent-red, #E0562F);">Kent</span></a>
             <nav aria-label="Primary Navigation">
                 <a href="web-design.html">Web Design & Maintenance</a>
                 <a href="seo-services.html">SEO & Lead Generation</a>
