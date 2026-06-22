@@ -8,7 +8,7 @@ content:
     fields:
       - name: body
         label: Website Content
-        type: rich-text
+        type: markdown
 
   - name: contactpage
     label: Contact Page (contact.html)
@@ -17,4 +17,4 @@ content:
     fields:
       - name: body
         label: Website Content
-        type: rich-text
+        type: markdown
