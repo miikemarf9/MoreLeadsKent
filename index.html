@@ -1,3 +1,12 @@
+Let’s do it. Here is your brand new, stripped-down, ultra-focused index.html file.
+
+I’ve removed all the complex SEO jargon, cut the heavy Google Maps ranking animation code, and completely streamlined the layout into your new two-tier pricing system (The Starter Page and The Local Pro). The mobile sticky header fix is baked right into this clean copy.
+
+Replace the contents of your index.html file with this clean, conversion-focused code:
+
+HTML
+
+
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -5,19 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>Custom Websites, Local SEO & Google Business Profile Management | MoreLeads Kent</title>
-    <meta name="description" content="Affordable custom website builds, local SEO, and hands-free Google Business Profile management for Kent trades and shops. 24/7 update support line based in Eastry.">
-    <meta name="keywords" content="local SEO Kent, custom website builds, website maintenance, Google Business Profile, GBP optimisation, Kent trades marketing, Sandwich SEO, Deal SEO, Canterbury SEO">
+    <title>Custom Websites & Maintenance for Local Trades | MoreLeads Kent</title>
+    <meta name="description" content="Affordable custom website builds and hands-free rolling monthly maintenance for Kent trades and small businesses. 24/7 direct update line based in Eastry.">
+    <meta name="keywords" content="web design Kent, website builder trades, local web design, website maintenance, Sandwich web design, Deal web design, Canterbury web design">
     <meta name="author" content="MoreLeads Kent">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="language" content="English">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moreleadskent.co.uk/">
-    <meta property="og:title" content="Custom Websites & Local SEO Management | MoreLeads Kent">
-    <meta property="og:description" content="Get a stunning custom website and complete Google Map ranking optimisation with low-effort, continuous maintenance. Done for you.">
-    <meta property="og:image" content="https://moreleadskent.co.uk/assets/og-image.png">
-    <meta property="og:image:alt" content="MoreLeads Kent - Local website and SEO management services">
     
     <link rel="canonical" href="https://moreleadskent.co.uk/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +33,6 @@
       "@type": "LocalBusiness",
       "@id": "https://moreleadskent.co.uk/",
       "name": "MoreLeads Kent",
-      "alternateName": "MoreLeads",
       "image": "https://moreleadskent.co.uk/assets/logo.png",
       "logo": "https://moreleadskent.co.uk/assets/logo.png",
       "telephone": "+447496797189",
@@ -44,63 +44,12 @@
         "addressRegion": "Kent",
         "postalCode": "CT13 0NY",
         "addressCountry": "GB"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 51.2541,
-        "longitude": 1.3031
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Eastry", "addressCountry": "GB"},
-        {"@type": "City", "name": "Sandwich", "addressCountry": "GB"},
-        {"@type": "City", "name": "Deal", "addressCountry": "GB"},
-        {"@type": "City", "name": "Dover", "addressCountry": "GB"},
-        {"@type": "City", "name": "Canterbury", "addressCountry": "GB"}
-      ],
-      "priceRange": "££",
-      "description": "Affordable custom website builds, Google Business Profile optimisation, and low-effort rolling monthly maintenance for local trades and small businesses.",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday"],
-          "opens": "10:00",
-          "closes": "14:00"
-        }
-      ],
-      "sameAs": [],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "0"
       }
     }
     </script>
 
     <style>
-        /* ── Ranking Animation ── */
-        @keyframes rank1pop {
-            0%   { transform: scale(1); }
-            50%  { transform: scale(1.35); }
-            100% { transform: scale(1); }
-        }
-        .rank-pop {
-            display: inline-block;
-            animation: rank1pop 0.45s ease-out;
-        }
-        .google-results .result-item {
-            position: absolute;
-            width: calc(100% - 30px);
-            left: 15px;
-            transition: top 1s cubic-bezier(0.25, 1, 0.5, 1), background 1s, border-color 1s;
-        }
-
-        /* ── Sticky Header & Direct Row Fix ── */
+        /* ── Sticky Header & Mobile Row Fix ── */
         header {
             position: sticky;
             top: 0;
@@ -111,7 +60,6 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
         
-        /* Forces side-by-side row alignment on desktop and mobile alike, ignoring style.css */
         header .nav-container {
             display: flex !important;
             flex-direction: row !important;
@@ -124,7 +72,7 @@
             box-sizing: border-box !important;
         }
 
-        /* ── Hamburger button ── */
+        /* ── Hamburger Menu Button ── */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -148,7 +96,7 @@
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        /* ── Mobile fullscreen overlay menu ── */
+        /* ── Mobile Fullscreen Overlay Menu ── */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -164,17 +112,15 @@
         .mobile-menu a {
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--navy-dark);
+            color: var(--navy-dark, #000);
             text-decoration: none;
-        }
-        .mobile-menu a.btn {
-            font-size: 1rem;
-            margin-top: 8px;
         }
 
         @media (max-width: 768px) {
             .hamburger { display: flex !important; }
-            header nav  { display: none !important; }
+            header nav { display: none !important; }
+            .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
+            .hero-actions { justify-content: center; flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -182,10 +128,10 @@
 
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo" title="MoreLeads Kent - Local Web & SEO" style="text-decoration: none; font-weight: bold; color: inherit; font-size: 1.3rem;">MoreLeads <span style="color: var(--accent-red, #E0562F);">Kent</span></a>
+            <a href="index.html" class="logo" title="MoreLeads Kent - Local Web Architecture" style="text-decoration: none; font-weight: bold; color: inherit; font-size: 1.3rem;">MoreLeads <span style="color: var(--accent-red, #E0562F);">Kent</span></a>
             <nav aria-label="Primary Navigation">
-                <a href="web-design.html">Web Design & Maintenance</a>
-                <a href="seo-services.html">SEO & Lead Generation</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing Plans</a>
                 <a href="#about">The Backstory</a>
                 <a href="#faqs">FAQs</a>
             </nav>
@@ -196,173 +142,129 @@
     </header>
 
     <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile Navigation">
-        <a href="web-design.html" class="mob-link">Web Design & Maintenance</a>
-        <a href="seo-services.html" class="mob-link">SEO & Lead Generation</a>
+        <a href="#how-it-works" class="mob-link">How It Works</a>
+        <a href="#pricing" class="mob-link">Pricing Plans</a>
         <a href="#about" class="mob-link">The Backstory</a>
         <a href="#faqs" class="mob-link">FAQs</a>
-        <a href="contact.html" class="btn btn-primary mob-link">Request Site Review</a>
+        <a href="contact.html" class="btn btn-primary mob-link">Request Web Build</a>
     </div>
 
     <main>
         <section class="hero" aria-label="Hero Section">
-            <div class="container hero-grid">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; padding: 60px 20px;">
                 <div class="hero-text animate-fade-in">
-                    <h1>Full Website Builds, SEO & Google Maps. <br><span class="accent-text">Done For You. Set & Forget.</span></h1>
-                    <p>Get a striking custom website, optimised Google Maps ranking, and continuous monthly management. We build it all from scratch, take care of every edit, and drive phone calls to your team. Hands-free.</p>
-                    <div class="hero-actions">
-                        <a href="tel:+447496797189" class="btn btn-primary">📞 24/7 Direct Line: 07496797189</a>
-                        <a href="#pricing" class="btn btn-secondary">View Fixed Rates</a>
+                    <h1 style="font-size: 3rem; margin-bottom: 15px;">Stunning Custom Websites for Local Trades.<br><span class="accent-text" style="color: var(--accent-red, #E0562F);">Done For You. Set & Forget.</span></h1>
+                    <p style="font-size: 1.15rem; margin-bottom: 25px;">Get a pristine, custom-coded website and low-effort monthly maintenance. We build it entirely from scratch, handle all your future edits, and let you get straight back to your actual trade jobs. Completely hands-free.</p>
+                    <div class="hero-actions" style="display: flex; gap: 15px;">
+                        <a href="#pricing" class="btn btn-primary">Get Built From £75</a>
+                        <a href="tel:+447496797189" class="btn btn-secondary">📞 Direct Line: 07496797189</a>
                     </div>
+                    <p style="font-size: 0.9rem; margin-top: 15px; color: #5c6770;">★ Built by the team behind Foxborough Furniture — Based locally in Eastry.</p>
                 </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="sections-bg" style="padding: 60px 20px; background: #fdfbf7;">
+            <div class="container text-center max-width-md" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2>The Hands-Free Web Shop</h2>
+                <p class="subtitle" style="margin-bottom: 40px;">Most design agencies charge thousands upfront and leave you struggling to edit things yourself. We treat custom web building like a straightforward service with zero tech headache.</p>
                 
-                <div class="hero-visual">
-                    <div class="google-box" role="img" aria-label="Google Maps ranking visualisation showing business climbing to top position">
-                        <div class="google-header">
-                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                            <div class="search-bar" aria-label="Search bar showing 'local business near me'">local business near me</div>
-                        </div>
-                        <div class="google-results" id="google-results" style="position: relative; overflow: hidden; height: 260px;">
-                            <div class="result-item stable" id="position-1" style="top: 0px;">
-                                <span class="map-pin" aria-label="Map pin">📍</span>
-                                <div><strong>Big Corporate Competitor</strong><p>⭐⭐⭐⭐⭐ (3 reviews) · High Agency Fees</p></div>
-                            </div>
-                            <div class="result-item animated-rank" id="target-listing" style="top: 150px; z-index: 5;">
-                                <span class="map-pin accent-pin" aria-label="Map pin highlighting your business">📍</span>
-                                <div>
-                                    <strong id="company-name">Your Local Business</strong>
-                                    <p>⭐⭐⭐⭐⭐ (48 reviews) · Live & Managed by Us</p>
-                                </div>
-                                <span class="rank-badge" id="rank-number"><span class="rank-inner" id="rank-inner">😞</span></span>
-                            </div>
-                            <div class="result-item stable" id="position-3" style="top: 75px;">
-                                <span class="map-pin" aria-label="Map pin">📍</span>
-                                <div><strong>Established Franchise Ltd</strong><p>⭐⭐⭐⭐ (12 reviews) · Out-of-town Brand</p></div>
-                            </div>
-                        </div>
+                <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                    <div class="card" style="background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                        <h3>⚡ Lightning Fast</h3>
+                        <p>Built entirely from scratch with lightweight, custom code. No slow WordPress plugins or heavy templates. Loads instantly on poor mobile signals out on job sites.</p>
+                    </div>
+                    <div class="card" style="background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                        <h3>📱 100% Mobile Ready</h3>
+                        <p>Engineered strictly for smartphones first. Clear, prominent call and contact buttons make it incredibly easy for local customers to book you on the move.</p>
+                    </div>
+                    <div class="card" style="background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                        <h3>🛠️ Fully Managed</h3>
+                        <p>Want a new gallery photo uploaded on a Saturday night? Need to adjust your opening hours instantly? Text or call our direct local support line anytime. It's fully taken care of.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="what-we-do" class="sections-bg" aria-labelledby="what-we-do-heading">
-            <div class="container text-center max-width-md">
-                <h2 id="what-we-do-heading">The Hands-Free Lead Machine</h2>
-                <p class="subtitle">Most web agencies charge thousands, drop an over-complicated design on your lap, and then charge you every time you need a typo fixed. We keep things incredibly simple.</p>
+        <section id="pricing" style="padding: 60px 20px;">
+            <div class="container text-center" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+                <h2>Flat-Rate Web Builds, Flat £15 Maintenance</h2>
+                <p class="subtitle" style="margin-bottom: 40px;">Choose how premium you want your initial digital storefront layout to be. Then, keep it securely hosted and fully maintained for a flat, pocket-money rate.</p>
                 
-                <div class="grid-3">
-                    <div class="card">
-                        <h3>1. Custom Web Builds</h3>
-                        <p>We build clean, ultra-responsive modern websites entirely from the ground up. No slow WordPress themes or heavy code. Every square inch is engineered to convert local traffic into qualified leads.</p>
-                    </div>
-                    <div class="card">
-                        <h3>2. Total Map Dominance</h3>
-                        <p>We fix, claim, and strategically optimise your Google Business Profile. We target the exact high-intent search terms (like "near me" and local town extensions) that your customers are searching.</p>
-                    </div>
-                    <div class="card">
-                        <h3>3. 24/7 Active Support</h3>
-                        <p>Want a new gallery photo uploaded on a Saturday night? Need to adjust your operating hours instantly? Call or text our direct local support line anytime. It's truly "set and forget."</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" aria-labelledby="pricing-heading">
-            <div class="container text-center">
-                <h2 id="pricing-heading">Low-Cost, Continuous Maintenance Options</h2>
-                <p class="subtitle">Fair, clear pricing tiers built for local tradespeople, workshops, and independent retail shops who want total flexibility with no hidden contract clauses.</p>
-                
-                <div class="grid-3 pricing-table">
-                    <div class="pricing-card">
-                        <span class="tier-label">From the Ground Up</span>
-                        <h3>The Launch Pad</h3>
-                        <div class="price">£50<span>setup cost</span></div>
-                        <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px; color: var(--navy-dark);">Then £15 <span style="font-size: 0.85rem; font-weight: normal; color: #707070;">/month</span></div>
-                        <p>A beautiful website built from scratch. Ideal if you want a professional address on the internet that runs perfectly in the background.</p>
-                        <ul>
-                            <li>Complete Custom Web Build</li>
-                            <li>Secure Website Hosting Included</li>
-                            <li>100% Mobile & Tablet Responsive</li>
-                            <li>Standard Local Contact Form</li>
-                            <li>24/7 Client Emergency Request Line</li>
+                <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 800px; margin: 0 auto;">
+                    <div class="pricing-card" style="background: #fff; padding: 40px 30px; border: 1px solid #e5e0d8; border-radius: 12px; text-align: left; position: relative;">
+                        <span class="tier-label" style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: bold; color: #707070;">One-Page Build</span>
+                        <h3 style="font-size: 1.8rem; margin: 10px 0;">The Starter Page</h3>
+                        <div class="price" style="font-size: 2.5rem; font-weight: 900; color: var(--navy-dark);">£75<span style="font-size: 1rem; font-weight: normal; color: #707070;"> setup cost</span></div>
+                        <div style="font-size: 1.2rem; font-weight: bold; margin: 10px 0 20px 0; color: var(--accent-red, #E0562F);">Then £15 <span style="font-size: 0.85rem; font-weight: normal; color: #707070;">/month</span></div>
+                        <p style="margin-bottom: 25px; min-height: 70px;">A crisp, high-converting single-page website. Perfect if you need a clean, professional online business card that displays your phone number, service summary, and map location.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 30px; line-height: 2;">
+                            <li>✔️ Custom One-Page Web Layout</li>
+                            <li>✔️ Secure High-Speed Hosting Included</li>
+                            <li>✔️ 100% Mobile & Tablet Optimized</li>
+                            <li>✔️ Direct Contact & Click-to-Call Buttons</li>
+                            <li>✔️ 24/7 Client Text Request Line</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-secondary-outline">Get Built for £50</a>
+                        <a href="contact.html" class="btn btn-secondary-outline" style="display: block; text-align: center;">Get Built for £75</a>
                     </div>
                     
-                    <div class="pricing-card">
-                        <span class="tier-label popular">Most Popular</span>
-                        <h3>The Managed Plan</h3>
-                        <div class="price">£50<span>setup cost</span></div>
-                        <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px; color: var(--navy-dark);">Then £30 <span style="font-size: 0.85rem; font-weight: normal; color: #707070;">/month</span></div>
-                        <p>Our classic package. Gives you secure hosting plus the ultimate freedom to have minor site modifications handled for you every single month.</p>
-                        <ul>
-                            <li>Everything in the £15 Hosting plan</li>
-                            <li><strong>Small monthly website tweaks & updates</strong></li>
-                            <li>Portfolio project photo additions</li>
-                            <li>Text changes & opening hour updates</li>
-                            <li>Direct text/call 24/7 update line</li>
+                    <div class="pricing-card" style="background: #fffbf7; padding: 40px 30px; border: 2px solid var(--accent-red, #E0562F); border-radius: 12px; text-align: left; position: relative;">
+                        <span class="tier-label" style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: bold; color: var(--accent-red, #E0562F);">Multi-Page + SEO</span>
+                        <h3 style="font-size: 1.8rem; margin: 10px 0;">The Local Pro</h3>
+                        <div class="price" style="font-size: 2.5rem; font-weight: 900; color: var(--navy-dark);">£120<span style="font-size: 1rem; font-weight: normal; color: #707070;"> setup cost</span></div>
+                        <div style="font-size: 1.2rem; font-weight: bold; margin: 10px 0 20px 0; color: var(--accent-red, #E0562F);">Then £15 <span style="font-size: 0.85rem; font-weight: normal; color: #707070;">/month</span></div>
+                        <p style="margin-bottom: 25px; min-height: 70px;">A complete multi-page website (Home, Dedicated Gallery, and Contact Pages) with regional local search keyword optimization compiled directly into the underlying code.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 30px; line-height: 2;">
+                            <li>✔️ Everything in the Starter Page</li>
+                            <li>✔️ Dedicated Services & Project Gallery Pages</li>
+                            <li>✔️ <strong>Local SEO Keywords Built into the Code</strong></li>
+                            <li>✔️ Image Optimization & Portfolio Loading Support</li>
+                            <li>✔️ Continuous Minor Tweaks & Content Changes</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-primary">Start Managed Plan</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <span class="tier-label">Local Market Growth</span>
-                        <h3>The SEO Local Push</h3>
-                        <div class="price">£50<span>setup cost</span></div>
-                        <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px; color: var(--navy-dark);">Then £75 <span style="font-size: 0.85rem; font-weight: normal; color: #707070;">/month</span></div>
-                        <p>Engineered strictly to get your trade ranking at the very top of regional maps where local customers click the most.</p>
-                        <ul>
-                            <li>Everything in the £30 Maintenance plan</li>
-                            <li><strong>Active Local Maps SEO Optimisation</strong></li>
-                            <li>Google Business Profile Management</li>
-                            <li>Targeted Local Map Postings & Keyword Strategy</li>
-                            <li>Competitor Monitoring & Continuous Traffic Tracking</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-secondary-outline">Get Local SEO Push</a>
+                        <a href="contact.html" class="btn btn-primary" style="display: block; text-align: center;">Get Built for £120</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="sections-bg" aria-labelledby="about-heading">
-            <div class="container about-grid">
+        <section id="about" class="sections-bg" style="padding: 60px 20px; background: #fdfbf7;">
+            <div class="container about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;">
                 <div class="about-text">
-                    <h2 id="about-heading">I'm a business owner myself. I care about your budget.</h2>
-                    <p>I don't sit in a glass corporate tech office. I built <a href="https://foxboroughfurniture.com" target="_blank" rel="noopener" style="color: var(--accent-red); font-weight: bold;">Foxborough Furniture</a> from a one-man operation into a thriving local business. I understand exactly what it takes.</p>
-                    <p>I learned local web architecture and search indexing out of absolute necessity to keep my workshop busy. By structuring clean code and deploying tight review systems, I beat out corporate agencies who were charging 3–5x more.</p>
-                    <p><strong>My sole aim is to get you local leads.</strong> When we work together, I look at the big picture. We will discuss your website, your Google status, and any other considerations for your success.</p>
-                    <blockquote cite="https://moreleadskent.co.uk/">"You get an open, continuous line to an actual human who understands the stress of managing jobs and clients."</blockquote>
+                    <h2>I'm a local trade business owner myself. I care about your budget.</h2>
+                    <p>I don't sit in a glass corporate digital office. I built <a href="https://foxboroughfurniture.com" target="_blank" rel="noopener" style="color: var(--accent-red, #E0562F); font-weight: bold; text-decoration: none;">Foxborough Furniture</a> right here in Eastry from a simple one-man operation into a busy local firm. I understand exactly what running trades involves.</p>
+                    <p>I learned local web code and modern architecture entirely out of structural necessity to keep my own workshop full of jobs. By avoiding clunky templates and deploying tight layouts, I built pages that reliably convert traffic without paying crazy monthly agency fees.</p>
+                    <p><strong>My single goal is to get your trade found online.</strong> You get a clear, open connection to a real human who knows what managing local client timelines is actually like.</p>
                 </div>
-                <div class="about-location-box">
+                <div class="about-location-box" style="background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #e5e0d8;">
                     <h3>Drop By / Call Anytime</h3>
-                    <p>We work out of our active business premises—never hiding behind automated forms or tickets:</p>
+                    <p>We operate directly out of active business premises—no hidden ticketing support systems:</p>
                     <p style="margin: 15px 0;"><strong>📍 Foxborough Furniture</strong><br>Foxborough Hill, Eastry, Kent, CT13 0NY</p>
-                    <p><strong>📞 24/7 Client Customer Hotline:</strong><br><a href="tel:+447496797189" style="color: var(--accent-red); font-weight: bold; text-decoration: none;">07496797189</a></p>
-                    <p style="font-size: 0.9rem; color: #5c6770; margin-top: 12px;">Look for our web optimisation signs outside the shop front, or give us a call while you're on a job breakout.</p>
+                    <p><strong>📞 24/7 Client Mobile Support Line:</strong><br><a href="tel:+447496797189" style="color: var(--accent-red, #E0562F); font-weight: bold; text-decoration: none; font-size: 1.2rem;">07496797189</a></p>
                 </div>
             </div>
         </section>
 
-        <section id="faqs" aria-labelledby="faqs-heading">
-            <div class="container max-width-md">
-                <h2 id="faqs-heading" class="text-center">Frequently Asked Questions</h2>
+        <section id="faqs" style="padding: 60px 20px;">
+            <div class="container max-width-md" style="max-width: 700px; margin: 0 auto;">
+                <h2 class="text-center" style="text-align: center; margin-bottom: 30px;">Frequently Asked Questions</h2>
                 
                 <div class="faq-accordion">
-                    <div class="faq-item">
-                        <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-1">What updates are covered in the £30 monthly package? <span>+</span></button>
-                        <div id="faq-answer-1" class="faq-content">
-                            <p>It covers minor adjustments to keep your digital storefront active. If you need text edited, new project images dropped into your gallery page, or seasonal changes made to your homepage—that's all included. We handle it on our dime.</p>
+                    <div class="faq-item" style="border-bottom: 1px solid #e5e0d8; padding: 15px 0;">
+                        <button class="faq-toggle" aria-expanded="false" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">What is included in the £15 monthly package? <span>+</span></button>
+                        <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding-top: 5px; color: #5c6770;">
+                            <p>It covers your lightning-fast web server hosting, secure SSL generation, and an active line to us. If you need text edited or a seasonal hour adjusted, you text our mobile line and it gets handled under your subscription.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-2">Why focus on both a custom build and Google Maps? <span>+</span></button>
-                        <div id="faq-answer-2" class="faq-content">
-                            <p>Google Maps captures the instant, hot "near me" local clicks. However, having a pristine, professional website connected directly to that map listing gives the customer the confidence to call or make a reservation once they've found you. Together, they convert.</p>
+                    <div class="faq-item" style="border-bottom: 1px solid #e5e0d8; padding: 15px 0;">
+                        <button class="faq-toggle" aria-expanded="false" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">What does "Local SEO built into code" mean? <span>+</span></button>
+                        <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding-top: 5px; color: #5c6770;">
+                            <p>Instead of just pasting basic text, we structure the underlying source code with local terms (like "Builder in Sandwich" or "Plumber near Deal"). This ensures search engines easily understand your exact geographic area right away.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-3">Are there any termination or setup hidden clauses? <span>+</span></button>
-                        <div id="faq-answer-3" class="faq-content">
-                            <p>Zero. All monthly agreements are run on flat rolling terms. If your business direction shifts or you decide it isn't a fit for your trade, you cancel instantly without financial penalty. Truly month-to-month, no lock-in.</p>
+                    <div class="faq-item" style="border-bottom: 1px solid #e5e0d8; padding: 15px 0;">
+                        <button class="faq-toggle" aria-expanded="false" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">Are there long-term contract ties? <span>+</span></button>
+                        <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding-top: 5px; color: #5c6770;">
+                            <p>No. All maintenance contracts run strictly month-to-month. If your trade direction shifts or you decide it isn't a fit for your workload, you can cancel instantly with zero penalty fees.</p>
                         </div>
                     </div>
                 </div>
@@ -370,23 +272,17 @@
         </section>
     </main>
 
-    <footer role="contentinfo">
+    <footer role="contentinfo" style="padding: 30px 20px; background: #000; color: #fff; text-align: center; font-size: 0.9rem;">
         <div class="container footer-content">
-            <nav aria-label="Footer Navigation">
-                <a href="#what-we-do">Services</a>
-                <a href="#pricing">Pricing</a>
-                <a href="contact.html">Contact</a>
-                <a href="#about">About</a>
-            </nav>
-            <p>&copy; 2026 MoreLeads Kent. Completely managed local solutions. Built alongside Foxborough Furniture.</p>
+            <p>&copy; 2026 MoreLeads Kent. Fully managed local solutions. Built alongside Foxborough Furniture.</p>
         </div>
     </footer>
 
     <script>
-        // ── Hamburger Menu ──
-        const hamburger   = document.getElementById('hamburger');
-        const mobileMenu  = document.getElementById('mobile-menu');
-        const mobLinks    = mobileMenu.querySelectorAll('.mob-link');
+        // ── Mobile Hamburger Menu ──
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobLinks = mobileMenu.querySelectorAll('.mob-link');
 
         hamburger.addEventListener('click', () => {
             const isOpen = mobileMenu.classList.toggle('open');
@@ -404,90 +300,11 @@
             });
         });
 
-        // ── Ranking Animation ──
-        // Auto-measures actual row height so it works correctly on all screen sizes
-        document.addEventListener("DOMContentLoaded", () => {
-            const position1     = document.getElementById("position-1");
-            const targetListing = document.getElementById("target-listing");
-            const position3     = document.getElementById("position-3");
-            const rankNumber    = document.getElementById("rank-number");
-            const rankInner     = document.getElementById("rank-inner");
-            const resultsBox    = document.getElementById("google-results");
-
-            if (!position1 || !targetListing || !position3 || !rankNumber || !rankInner) return;
-
-            let loopTimer, t1, t2;
-
-            function getRowHeight() {
-                // Measure the live rendered height of a row + any margin beneath it
-                const style = window.getComputedStyle(position1);
-                const marginBottom = parseFloat(style.marginBottom) || 0;
-                return Math.ceil(position1.offsetHeight + marginBottom + 4);
-            }
-
-            function popIcon(text) {
-                rankInner.classList.remove("rank-pop");
-                rankInner.textContent = text;
-                void rankInner.offsetWidth; // force reflow to restart animation
-                rankInner.classList.add("rank-pop");
-            }
-
-            function animateRanking() {
-                const R = getRowHeight();
-
-                // Expand container to fit 3 rows exactly
-                resultsBox.style.height = (R * 3 + 4) + "px";
-
-                // STATE 1: reset — your business at bottom (😞)
-                position1.style.top       = "0px";
-                position3.style.top       = R + "px";
-                targetListing.style.top   = (R * 2) + "px";
-
-                targetListing.style.background  = "var(--white)";
-                targetListing.style.borderColor = "#e5e0d8";
-                rankNumber.style.background     = "#e5e0d8";
-                rankNumber.style.color          = "var(--navy-dark)";
-                rankInner.textContent           = "😞";
-                rankInner.classList.remove("rank-pop");
-
-                // STATE 2 (1s): your business -> position 2 (😮), franchise drops to 3
-                t1 = setTimeout(() => {
-                    position3.style.top     = (R * 2) + "px";
-                    targetListing.style.top = R + "px";
-                    popIcon("😮");
-                }, 1000);
-
-                // STATE 3 (3s): your business -> position 1 (#1 + pop), corporate drops to 2
-                t2 = setTimeout(() => {
-                    position1.style.top             = R + "px";
-                    targetListing.style.top         = "0px";
-                    targetListing.style.background  = "#fffbf7";
-                    targetListing.style.borderColor = "#E0562F";
-                    rankNumber.style.background     = "#E0562F";
-                    rankNumber.style.color          = "#FFFFFF";
-                    popIcon("#1");
-                }, 3000);
-
-                // Hold at top then restart — 6s total cycle
-                loopTimer = setTimeout(animateRanking, 6000);
-            }
-
-            animateRanking();
-
-            // Recalculate on orientation change / resize
-            window.addEventListener('resize', () => {
-                clearTimeout(t1);
-                clearTimeout(t2);
-                clearTimeout(loopTimer);
-                animateRanking();
-            });
-        });
-
-        // ── FAQ Accordion ──
+        // ── FAQ Accordion Toggle ──
         document.querySelectorAll('.faq-toggle').forEach(toggle => {
             toggle.addEventListener('click', () => {
-                const content    = toggle.nextElementSibling;
-                const icon       = toggle.querySelector('span');
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('span');
                 const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
                 if (isExpanded) {
                     content.style.maxHeight = null;
