@@ -1,0 +1,14 @@
+media: assets
+
+content:
+  - name: homepage
+    label: Homepage (index.html)
+    type: file
+    path: index.html
+    format: code
+
+  - name: contactpage
+    label: Contact Page (contact.html)
+    type: file
+    path: contact.html
+    format: code
