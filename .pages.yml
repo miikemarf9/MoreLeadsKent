@@ -15,4 +15,4 @@ content:
         type: string
       - name: hero_sub
         label: Hero Subtext Paragraph
-        type: markdown
+        type: text
