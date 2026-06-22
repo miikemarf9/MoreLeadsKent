@@ -107,6 +107,68 @@
             text-decoration: none;
         }
 
+        /* ── Pricing Cards ── */
+        .pricing-card-new {
+            background: #fff;
+            border: 1px solid #e5e0d8;
+            border-radius: 12px;
+            padding: 36px 28px 32px;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+            cursor: default;
+        }
+        .pricing-card-new:hover {
+            transform: translateY(-5px);
+            border-color: #E0562F;
+            box-shadow: 0 12px 32px rgba(224, 86, 47, 0.15);
+        }
+        .pricing-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background: #f0ede8;
+            color: #707070;
+        }
+        .pricing-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 28px;
+        }
+        .pricing-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-size: 0.88rem;
+            padding: 5px 0;
+            line-height: 1.4;
+        }
+        .pricing-tick {
+            color: #E0562F;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .pricing-btn {
+            display: block;
+            text-align: center;
+            padding: 11px 0;
+            border-radius: 7px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1.5px solid #E0562F;
+            color: #E0562F;
+            background: transparent;
+            transition: background 0.18s, color 0.18s;
+        }
+        .pricing-btn:hover {
+            background: #E0562F;
+            color: #fff;
+        }
+
         @media (max-width: 768px) {
             .hamburger { display: flex !important; }
             header nav { display: none !important; }
@@ -175,40 +237,44 @@
         <section id="pricing" style="padding: 60px 20px;">
             <div class="container text-center" style="max-width: 1000px; margin: 0 auto; text-align: center;">
                 <h2>Flat-Rate Web Builds, Flat £15 Maintenance</h2>
-                <p class="subtitle" style="margin-bottom: 40px;">Choose how premium you want your initial digital storefront layout to be. Then, keep it securely hosted and fully maintained for a flat, pocket-money rate.</p>
-                
-                <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 800px; margin: 0 auto;">
-                    <div class="pricing-card" style="padding: 40px 30px; border: 1px solid #e5e0d8; border-radius: 12px; text-align: left; position: relative;">
-                        <span class="tier-label" style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: bold; color: #707070;">One-Page Build</span>
-                        <h3 style="font-size: 1.8rem; margin: 10px 0;">The Starter Page</h3>
-                        <div class="price" style="font-size: 2.5rem; font-weight: 900; color: var(--navy-dark);">£75<span style="font-size: 1rem; font-weight: normal; color: #707070;"> setup cost</span></div>
-                        <div style="font-size: 1.2rem; font-weight: bold; margin: 10px 0 20px 0; color: var(--accent-red, #E0562F);">Then £15 <span style="font-size: 0.85rem; font-weight: normal; color: #707070;">/month</span></div>
-                        <p style="margin-bottom: 25px; min-height: 70px;">A crisp, high-converting single-page website. Perfect if you need a clean, professional online business card that displays your phone number, service summary, and map location.</p>
-                        <ul style="list-style: none; padding: 0; margin-bottom: 30px; line-height: 2;">
-                            <li>✔️ Custom One-Page Web Layout</li>
-                            <li>✔️ Secure High-Speed Hosting Included</li>
-                            <li>✔️ 100% Mobile & Tablet Optimized</li>
-                            <li>✔️ Direct Contact & Click-to-Call Buttons</li>
-                            <li>✔️ 24/7 Client Text Request Line</li>
+                <p class="subtitle" style="margin-bottom: 40px;">Choose how premium you want your initial digital storefront to be. Then keep it hosted and maintained for a flat, pocket-money rate.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 720px; margin: 0 auto;">
+
+                    <div class="pricing-card-new">
+                        <span class="pricing-badge">One-Page Build</span>
+                        <h3 style="font-size:1.55rem;font-weight:700;margin:6px 0 4px;color:#111;">The Starter Page</h3>
+                        <div style="font-size:2.4rem;font-weight:900;color:#111;line-height:1.1;margin:12px 0 4px;">£75 <span style="font-size:0.95rem;font-weight:400;color:#707070;">setup cost</span></div>
+                        <div style="font-size:1.1rem;font-weight:700;color:#E0562F;margin-bottom:16px;">Then £15 <span style="font-size:0.82rem;font-weight:400;color:#707070;">/month</span></div>
+                        <p style="font-size:0.9rem;color:#5c6770;line-height:1.6;margin-bottom:20px;min-height:60px;">A crisp, professional online brochure. Perfect for showing customers your number, services, and location — a clean digital business card to share with people.</p>
+                        <hr style="border:none;border-top:1px solid #e5e0d8;margin:0 0 18px;">
+                        <ul class="pricing-list">
+                            <li><span class="pricing-tick">✓</span> Custom one-page web layout</li>
+                            <li><span class="pricing-tick">✓</span> Secure high-speed hosting included</li>
+                            <li><span class="pricing-tick">✓</span> 100% mobile &amp; tablet optimised</li>
+                            <li><span class="pricing-tick">✓</span> Direct contact &amp; click-to-call buttons</li>
+                            <li><span class="pricing-tick">✓</span> 24/7 client text request line</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-secondary-outline" style="display: block; text-align: center;">Get Built for £75</a>
+                        <a href="contact.html" class="pricing-btn">Get built for £75</a>
                     </div>
-                    
-                    <div class="pricing-card" style="padding: 40px 30px; border: 1px solid #e5e0d8; border-radius: 12px; text-align: left; position: relative;">
-                        <span class="tier-label" style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: bold; color: var(--accent-red, #E0562F);">Multi-Page + SEO</span>
-                        <h3 style="font-size: 1.8rem; margin: 10px 0;">The Local Pro</h3>
-                        <div class="price" style="font-size: 2.5rem; font-weight: 900; color: var(--navy-dark);">£120<span style="font-size: 1rem; font-weight: normal; color: #707070;"> setup cost</span></div>
-                        <div style="font-size: 1.2rem; font-weight: bold; margin: 10px 0 20px 0; color: var(--accent-red, #E0562F);">Then £15 <span style="font-size: 0.85rem; font-weight: normal; color: #707070;">/month</span></div>
-                        <p style="margin-bottom: 25px; min-height: 70px;">A complete multi-page website (Home, Dedicated Gallery, and Contact Pages) with regional local search keyword optimization compiled directly into the underlying code.</p>
-                        <ul style="list-style: none; padding: 0; margin-bottom: 30px; line-height: 2;">
-                            <li>✔️ Everything in the Starter Page</li>
-                            <li>✔️ Dedicated Services & Project Gallery Pages</li>
-                            <li>✔️ <strong>Local SEO Keywords Built into the Code</strong></li>
-                            <li>✔️ Image Optimization & Portfolio Loading Support</li>
-                            <li>✔️ Continuous Minor Tweaks & Content Changes</li>
+
+                    <div class="pricing-card-new">
+                        <span class="pricing-badge">Multi-Page Build</span>
+                        <h3 style="font-size:1.55rem;font-weight:700;margin:6px 0 4px;color:#111;">Inbuilt with SEO</h3>
+                        <div style="font-size:2.4rem;font-weight:900;color:#111;line-height:1.1;margin:12px 0 4px;">£120 <span style="font-size:0.95rem;font-weight:400;color:#707070;">setup cost</span></div>
+                        <div style="font-size:1.1rem;font-weight:700;color:#E0562F;margin-bottom:16px;">Then £15 <span style="font-size:0.82rem;font-weight:400;color:#707070;">/month</span></div>
+                        <p style="font-size:0.9rem;color:#5c6770;line-height:1.6;margin-bottom:20px;min-height:60px;">A complete multi-page site engineered to pull in local search traffic. Built for trades that want their website actively winning them new leads — not just looking good.</p>
+                        <hr style="border:none;border-top:1px solid #e5e0d8;margin:0 0 18px;">
+                        <ul class="pricing-list">
+                            <li><span class="pricing-tick">✓</span> Everything in the Starter Page</li>
+                            <li><span class="pricing-tick">✓</span> Dedicated services &amp; project gallery pages</li>
+                            <li><span class="pricing-tick">✓</span> <strong>Local SEO keywords built into the code</strong></li>
+                            <li><span class="pricing-tick">✓</span> Image optimisation &amp; portfolio loading support</li>
+                            <li><span class="pricing-tick">✓</span> Continuous minor tweaks &amp; content changes</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-primary" style="display: block; text-align: center;">Get Built for £120</a>
+                        <a href="contact.html" class="pricing-btn">Get built for £120</a>
                     </div>
+
                 </div>
             </div>
         </section>
