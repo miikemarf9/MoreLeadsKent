@@ -1,0 +1,26 @@
+media: assets
+
+content:
+  - name: homepage
+    label: Homepage (index.html)
+    type: file
+    path: index.html
+    format: code
+    options:
+      language: html
+    fields:
+      - name: body
+        label: Edit Website Code
+        type: code
+
+  - name: contactpage
+    label: Contact Page (contact.html)
+    type: file
+    path: contact.html
+    format: code
+    options:
+      language: html
+    fields:
+      - name: body
+        label: Edit Website Code
+        type: code
