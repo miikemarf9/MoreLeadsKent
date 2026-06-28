@@ -108,8 +108,21 @@
 
         /* ── Hero ── */
         .mlk-hero {
+            position: relative;
             background: #111;
             padding: 64px 48px 56px;
+            overflow: hidden;
+        }
+        #particle-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .mlk-hero-content {
+            position: relative;
+            z-index: 1;
         }
         .mlk-eyebrow {
             display: inline-flex;
@@ -332,17 +345,20 @@
     <main>
 
         <section class="mlk-hero" aria-label="Hero Section">
-            <div class="mlk-eyebrow"><span class="mlk-eyebrow-dot"></span> Based in Woodnesborough, Kent</div>
-            <h1 class="mlk-h1">Affordable, Professional Websites for Kent Trades & Businesses.<br><span>100% Done For You. Set and Forget.</span></h1>
-            <p class="mlk-sub">Skip the confusing DIY builders. We handle your custom domain, build your site, and manage the hosting so you don't have to lift a finger. Zero technical stress, lightning-fast speeds, and secure cloud hosting.</p>
-            <p class="mlk-price-line">Packages start at <strong style="color:#fff;">£75 setup</strong> + <strong style="color:#E0562F;">£20/month</strong> — Domain included.</p>
-            <div class="mlk-btns">
-                <a href="#pricing" class="mlk-btn-primary">Get built from £75</a>
-                <a href="tel:+447496797189" class="mlk-btn-ghost">📞 07496 797189</a>
-            </div>
-            <div class="mlk-trust">
-                <span class="mlk-trust-stars">★★★★★</span>
-                <span class="mlk-trust-text"><strong>Built by the team behind Foxborough Furniture</strong> — a real local trade business in Woodnesborough</span>
+            <canvas id="particle-canvas"></canvas>
+            <div class="mlk-hero-content">
+                <div class="mlk-eyebrow"><span class="mlk-eyebrow-dot"></span> Based in Woodnesborough, Kent</div>
+                <h1 class="mlk-h1">Affordable, Professional Websites for Kent Trades & Businesses.<br><span>100% Done For You. Set and Forget.</span></h1>
+                <p class="mlk-sub">Skip the confusing DIY builders. We handle your custom domain, build your site, and manage the hosting so you don't have to lift a finger. Zero technical stress, lightning-fast speeds, and secure cloud hosting.</p>
+                <p class="mlk-price-line">Packages start at <strong style="color:#fff;">£75 setup</strong> + <strong style="color:#E0562F;">£20/month</strong> — Domain included.</p>
+                <div class="mlk-btns">
+                    <a href="#pricing" class="mlk-btn-primary">Get built from £75</a>
+                    <a href="tel:+447496797189" class="mlk-btn-ghost">📞 07496 797189</a>
+                </div>
+                <div class="mlk-trust">
+                    <span class="mlk-trust-stars">★★★★★</span>
+                    <span class="mlk-trust-text"><strong>Built by the team behind Foxborough Furniture</strong> — a real local trade business in Woodnesborough</span>
+                </div>
             </div>
         </section>
 
@@ -512,6 +528,75 @@
                 }
             });
         });
+
+        /* ── Particle Animation ── */
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let pts = [];
+        const NUM = 55;
+        const MAX_DIST = 130;
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        }
+
+        function rand(a, b) { return Math.random() * (b - a) + a; }
+
+        function makeParticle() {
+            return {
+                x: rand(0, canvas.width),
+                y: rand(0, canvas.height),
+                vx: rand(-0.3, 0.3),
+                vy: rand(-0.2, 0.2),
+                r: rand(1.5, 3),
+                orange: Math.random() > 0.75
+            };
+        }
+
+        resizeCanvas();
+        for (let i = 0; i < NUM; i++) pts.push(makeParticle());
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < pts.length; i++) {
+                for (let j = i + 1; j < pts.length; j++) {
+                    const dx = pts[i].x - pts[j].x;
+                    const dy = pts[i].y - pts[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < MAX_DIST) {
+                        const alpha = (1 - dist / MAX_DIST) * 0.18;
+                        ctx.beginPath();
+                        ctx.moveTo(pts[i].x, pts[i].y);
+                        ctx.lineTo(pts[j].x, pts[j].y);
+                        ctx.strokeStyle = pts[i].orange || pts[j].orange
+                            ? `rgba(224,86,47,${alpha})`
+                            : `rgba(255,255,255,${alpha})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            for (const p of pts) {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = p.orange ? 'rgba(224,86,47,0.7)' : 'rgba(255,255,255,0.45)';
+                ctx.fill();
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0) p.x = canvas.width;
+                if (p.x > canvas.width) p.x = 0;
+                if (p.y < 0) p.y = canvas.height;
+                if (p.y > canvas.height) p.y = 0;
+            }
+
+            requestAnimationFrame(drawParticles);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        drawParticles();
     </script>
 </body>
 </html>
