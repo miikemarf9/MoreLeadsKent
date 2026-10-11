@@ -35,11 +35,19 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo 'Missing GitHub Actions repository secret CLOUDFLARE_API_TOKEN.'
-            echo 'Add a Cloudflare API token with Account > Cloudflare Pages > Edit permission.'
-            exit 1
-          fi
+          python3 - <<'PY'
+          import os, sys
+          token = os.environ.get('CLOUDFLARE_API_TOKEN', '')
+          if not token:
+              sys.exit('TOKEN CHECK FAILED: GitHub secret is missing or empty.')
+          if any(x in token.lower() for x in ('curl ', 'authorization:', 'bearer ', 'https://')):
+              sys.exit('TOKEN CHECK FAILED: Secret contains the Cloudflare test command, a URL, or header text. Use only the raw token value.')
+          if any(ch.isspace() for ch in token):
+              sys.exit('TOKEN CHECK FAILED: Secret contains spaces or line breaks. Use only the raw token value.')
+          if len(token) < 20 or any(ord(c) < 33 or ord(c) > 126 for c in token):
+              sys.exit('TOKEN CHECK FAILED: Secret does not look like a complete API token.')
+          print('TOKEN FORMAT OK: Secret has a plausible one-line token; checking Cloudflare authentication next.')
+          PY
 
       - name: Install Wrangler
         run: npm install --no-save --no-package-lock wrangler@4
