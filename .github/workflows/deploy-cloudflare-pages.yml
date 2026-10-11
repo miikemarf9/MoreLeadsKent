@@ -1,0 +1,40 @@
+name: Deploy MoreLeads Kent to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: moreleads-kent-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy production website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Assemble only public website files
+        run: |
+          mkdir -p dist
+          cp index.html contact.html privacy.html style.css script.js favicon.svg robots.txt sitemap.xml dist/
+          cp -R assets dist/assets
+          test -f dist/index.html
+          test -f dist/assets/grabandbook.svg
+          test -f dist/assets/roomfound.svg
+          test -f dist/assets/foxborough.svg
+
+      - name: Deploy to existing Cloudflare Pages project
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: faf3fd0d8a5e4ea8c386e156046a2933
+          command: pages deploy dist --project-name=moreleads-kent --branch=main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
