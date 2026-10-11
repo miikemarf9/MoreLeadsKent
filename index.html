@@ -1,573 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
 <head>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="shortcut icon" href="favicon.svg">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>Affordable Custom Websites for Kent Trades & Small Businesses | MoreLeads Kent</title>
-    <meta name="description" content="Affordable custom website builds and hands-free rolling monthly maintenance for Kent trades and small businesses. 24/7 direct update line based in Woodnesborough.">
-    <meta name="keywords" content="web design Kent, website builder trades, local web design, website maintenance, Sandwich web design, Deal web design, Canterbury web design">
-    <meta name="author" content="MoreLeads Kent">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    
-    <link rel="canonical" href="https://moreleadskent.co.uk/">
-
-    <!-- Open Graph / Facebook / LinkedIn / Instagram -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moreleadskent.co.uk/">
-    <meta property="og:title" content="Affordable Custom Websites for Kent Trades & Small Businesses">
-    <meta property="og:description" content="Affordable custom website builds and hands-free rolling monthly maintenance for Kent trades and small businesses. Based in Woodnesborough.">
-    <meta property="og:image" content="https://moreleadskent.co.uk/social-share.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="en_GB">
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Affordable Custom Websites for Kent Trades & Small Businesses">
-    <meta name="twitter:description" content="Affordable custom website builds and hands-free rolling monthly maintenance for Kent trades and small businesses.">
-    <meta name="twitter:image" content="https://moreleadskent.co.uk/social-share.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link rel="stylesheet" href="style.css" media="screen">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://moreleadskent.co.uk/",
-      "name": "MoreLeads Kent",
-      "image": "https://moreleadskent.co.uk/moreleadslogo.png",
-      "logo": "https://moreleadskent.co.uk/moreleadslogo.png",
-      "telephone": "+447496797189",
-      "url": "https://moreleadskent.co.uk",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Foxborough Furniture, Foxborough Hill",
-        "addressLocality": "Eastry",
-        "addressRegion": "Kent",
-        "postalCode": "CT13 0NY",
-        "addressCountry": "GB"
-      }
-    }
-    </script>
-
-    <style>
-        /* ── Sticky Header ── */
-        header {
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: var(--white, #fff);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-        header .nav-container {
-            display: flex !important;
-            flex-direction: row !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            width: 100% !important;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px !important;
-            box-sizing: border-box !important;
-        }
-
-        /* ── Hamburger ── */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            z-index: 300;
-        }
-        .hamburger span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: var(--navy-dark, #000);
-            border-radius: 2px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-        /* ── Mobile Menu ── */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: var(--white, #fff);
-            z-index: 200;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 28px;
-        }
-        .mobile-menu.open { display: flex; }
-        .mobile-menu a {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--navy-dark, #000);
-            text-decoration: none;
-        }
-
-        /* ── Hero ── */
-        .mlk-hero {
-            background: #111;
-            padding: 64px 48px 56px;
-        }
-        .mlk-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            background: rgba(224,86,47,0.18);
-            color: #f07a56;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 5px 12px;
-            border-radius: 20px;
-            margin-bottom: 24px;
-        }
-        .mlk-eyebrow-dot {
-            width: 6px;
-            height: 6px;
-            background: #E0562F;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .mlk-h1 {
-            font-family: 'Archivo', sans-serif;
-            font-size: 3rem;
-            font-weight: 900;
-            color: #fff;
-            line-height: 1.1;
-            margin: 0 0 20px;
-            max-width: 680px;
-        }
-        .mlk-h1 span { color: #E0562F; }
-        .mlk-sub {
-            font-size: 1.05rem;
-            color: #9a9a9a;
-            line-height: 1.75;
-            max-width: 560px;
-            margin: 0 0 16px;
-        }
-        .mlk-price-line {
-            font-size: 0.95rem;
-            color: #bbb;
-            margin-bottom: 34px;
-        }
-        .mlk-btns {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 38px;
-        }
-        .mlk-btn-primary {
-            background: #E0562F;
-            color: #fff;
-            font-size: 0.95rem;
-            font-weight: 700;
-            padding: 14px 26px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.18s;
-            display: inline-block;
-        }
-        .mlk-btn-primary:hover { background: #c0401a; }
-        .mlk-btn-ghost {
-            background: rgba(255,255,255,0.07);
-            color: #fff;
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 14px 26px;
-            border-radius: 8px;
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.15);
-            transition: background 0.18s;
-            display: inline-block;
-        }
-        .mlk-btn-ghost:hover { background: rgba(255,255,255,0.12); }
-        .mlk-trust {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 28px;
-            flex-wrap: wrap;
-        }
-        .mlk-trust-stars { color: #E0562F; font-size: 0.9rem; letter-spacing: 2px; }
-        .mlk-trust-text { font-size: 0.82rem; color: #666; }
-        .mlk-trust-text strong { color: #999; font-weight: 600; }
-
-        /* ── Feature Strip ── */
-        .mlk-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1px;
-            background: #e5e0d8;
-        }
-        .mlk-feat {
-            background: #fdfbf7;
-            padding: 36px 30px;
-            transition: background 0.2s;
-        }
-        .mlk-feat:hover { background: #f5f0e8; }
-        .mlk-feat-icon {
-            width: 42px;
-            height: 42px;
-            background: #E0562F;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-            font-size: 20px;
-            line-height: 1;
-        }
-        .mlk-feat-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #111;
-            margin: 0 0 10px;
-        }
-        .mlk-feat-body {
-            font-size: 0.875rem;
-            color: #5c6770;
-            line-height: 1.65;
-            margin: 0;
-        }
-
-        /* ── Pricing Cards ── */
-        .pricing-card-new {
-            background: #fff;
-            border: 1px solid #e5e0d8;
-            border-radius: 12px;
-            padding: 36px 28px 32px;
-            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-            cursor: default;
-        }
-        .pricing-card-new:hover {
-            transform: translateY(-5px);
-            border-color: #E0562F;
-            box-shadow: 0 12px 32px rgba(224, 86, 47, 0.15);
-        }
-        .pricing-badge {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 3px 10px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            background: #f0ede8;
-            color: #707070;
-        }
-        .pricing-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 28px;
-        }
-        .pricing-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 9px;
-            font-size: 0.88rem;
-            padding: 5px 0;
-            line-height: 1.4;
-        }
-        .pricing-tick {
-            color: #E0562F;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        .pricing-btn {
-            display: block;
-            text-align: center;
-            padding: 11px 0;
-            border-radius: 7px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            border: 1.5px solid #E0562F;
-            color: #E0562F;
-            background: transparent;
-            transition: background 0.18s, color 0.18s;
-        }
-        .pricing-btn:hover {
-            background: #E0562F;
-            color: #fff;
-        }
-
-
-        /* Portfolio */
-        .portfolio-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; margin-top:32px; text-align:left; }
-        .portfolio-card { background:#fff; border:1px solid #e5e0d8; border-radius:12px; padding:30px; display:flex; flex-direction:column; gap:12px; }
-        .portfolio-card .portfolio-type { color:#E0562F; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
-        .portfolio-card h3 { margin:0; color:#111; font-size:1.45rem; }
-        .portfolio-card p { margin:0; color:#5c6770; line-height:1.65; font-size:.92rem; }
-        .portfolio-card a { margin-top:auto; padding-top:10px; color:#c44b29; font-weight:700; text-decoration:none; }
-        .portfolio-card a:hover { text-decoration:underline; }
-        @media(max-width:650px) { .portfolio-grid { grid-template-columns:1fr; } .portfolio-card { padding:24px; } }
-
-        /* ── Responsive ── */
-        @media (max-width: 768px) {
-            .hamburger { display: flex !important; }
-            header nav { display: none !important; }
-            .mlk-hero { padding: 40px 24px 36px; }
-            .mlk-h1 { font-size: 2.1rem; }
-            .mlk-btns { flex-direction: column; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141a21">
+  <meta name="description" content="Websites and online booking solutions for Kent businesses. Explore Grab&amp;Book for appointment booking, customer management and growth tools.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://moreleadskent.co.uk/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MoreLeads Kent | Websites Built for Real Businesses">
+  <meta property="og:description" content="Practical websites, booking tools and local marketing for independent Kent businesses.">
+  <meta property="og:url" content="https://moreleadskent.co.uk/">
+  <meta property="og:image" content="https://moreleadskent.co.uk/social-share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Web Design Kent | Websites Built for Business | MoreLeads Kent</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MoreLeads Kent","url":"https://moreleadskent.co.uk/","telephone":"+447496797189","areaServed":{"@type":"AdministrativeArea","name":"Kent"},"address":{"@type":"PostalAddress","addressLocality":"Eastry","addressRegion":"Kent","postalCode":"CT13 0NY","addressCountry":"GB"},"description":"Independent web design, digital marketing and custom booking tools for Kent businesses."}</script>
 </head>
 <body>
-
-    <header>
-        <div class="nav-container">
-            <a href="index.html" title="MoreLeads Kent" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 1.45rem; color: #111; letter-spacing: -0.5px;">More<span style="color: #E0562F;">Leads</span> <span style="font-size: 0.85rem; font-weight: 700; color: #888; letter-spacing: 0.05em;">KENT</span></span>
-            </a>
-            <nav aria-label="Primary Navigation">
-                <a href="index.html">Home</a>
-                <a href="#portfolio">Our Work</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-
-    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile Navigation">
-        <a href="index.html" class="mob-link">Home</a>
-        <a href="#portfolio" class="mob-link">Our Work</a>
-        <a href="contact.html" class="mob-link">Contact</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="#top" aria-label="MoreLeads Kent home"><span class="brand-mark">M<span class="mark-dot">.</span></span><span>More<span class="brand-accent">Leads</span><small>KENT</small></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#work">Our work</a><a href="#booking">Grab&amp;Book</a><a href="#services">What we do</a><a href="#process">How it works</a><a href="#pricing">Pricing</a>
+      </nav>
+      <a class="nav-cta" href="contact.html">Let's talk <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
     </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#work">Our work</a><a href="#booking">Grab&amp;Book</a><a href="#services">What we do</a><a href="#process">How it works</a><a href="#pricing">Pricing</a><a href="contact.html">Let's talk ↗</a></nav>
+  </header>
 
-    <main>
-
-        <section class="mlk-hero" aria-label="Hero Section">
-            <div class="mlk-eyebrow"><span class="mlk-eyebrow-dot"></span> Based in Woodnesborough, Kent</div>
-            <h1 class="mlk-h1">Affordable, Professional Websites for Kent Trades & Businesses.<br><span>100% Done For You. Set and Forget.</span></h1>
-            <p class="mlk-sub">Skip the confusing DIY builders. You keep full ownership of your domain; we build your site, connect everything properly, and manage the hosting for you. Zero technical stress, lightning-fast speeds, and secure cloud hosting.</p>
-            <p class="mlk-price-line">Packages start at <strong style="color:#fff;">£75 setup</strong> + <strong style="color:#E0562F;">£20/month</strong> — Domain connection included.</p>
-            <div class="mlk-btns">
-                <a href="#pricing" class="mlk-btn-primary">Get built from £75</a>
-                <a href="tel:+447496797189" class="mlk-btn-ghost">📞 07496 797189</a>
-            </div>
-            <div class="mlk-trust">
-                <span class="mlk-trust-stars">★★★★★</span>
-                <span class="mlk-trust-text"><strong>Built by the team behind Foxborough Furniture</strong> — a real local trade business in Woodnesborough</span>
-            </div>
-        </section>
-
-        <section id="how-it-works" aria-label="Features">
-            <div class="mlk-features">
-                <div class="mlk-feat">
-                    <div class="mlk-feat-icon">⚡</div>
-                    <p class="mlk-feat-title">Lightning fast</p>
-                    <p class="mlk-feat-body">Built from scratch with lightweight code — no WordPress bloat. Loads instantly even on poor mobile signal out on a job site.</p>
-                </div>
-                <div class="mlk-feat">
-                    <div class="mlk-feat-icon">📱</div>
-                    <p class="mlk-feat-title">Mobile first</p>
-                    <p class="mlk-feat-body">Engineered for smartphones. Prominent call and contact buttons make it effortless for customers to book you on the move.</p>
-                </div>
-                <div class="mlk-feat">
-                    <div class="mlk-feat-icon">🛠️</div>
-                    <p class="mlk-feat-title">Fully managed</p>
-                    <p class="mlk-feat-body">New photo on a Saturday night? Adjusted hours? Just text our direct line — it's handled under your monthly subscription.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" style="padding: 60px 20px;">
-            <div class="container text-center" style="max-width: 1000px; margin: 0 auto; text-align: center;">
-                <h2>Flat-Rate Web Builds, Flat £20 Maintenance</h2>
-                <p class="subtitle" style="margin-bottom: 40px;">Choose how premium you want your initial digital storefront to be. Then keep it hosted and maintained for a flat, pocket-money rate — domain included.</p>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 720px; margin: 0 auto;">
-
-                    <div class="pricing-card-new">
-                        <span class="pricing-badge">One-Page Build</span>
-                        <h3 style="font-size:1.55rem;font-weight:700;margin:6px 0 4px;color:#111;">The Starter Page</h3>
-                        <div style="font-size:2.4rem;font-weight:900;color:#111;line-height:1.1;margin:12px 0 4px;">£75 <span style="font-size:0.95rem;font-weight:400;color:#707070;">setup cost</span></div>
-                        <div style="font-size:1.1rem;font-weight:700;color:#E0562F;margin-bottom:16px;">Then £20 <span style="font-size:0.82rem;font-weight:400;color:#707070;">/month — domain included</span></div>
-                        <p style="font-size:0.9rem;color:#5c6770;line-height:1.6;margin-bottom:20px;min-height:60px;">A crisp, professional online brochure. Perfect for showing customers your number, services, and location — a clean digital business card to share with people.</p>
-                        <hr style="border:none;border-top:1px solid #e5e0d8;margin:0 0 18px;">
-                        <ul class="pricing-list">
-                            <li><span class="pricing-tick">✓</span> Custom one-page web layout</li>
-                            <li><span class="pricing-tick">✓</span> Secure high-speed hosting included</li>
-                            <li><span class="pricing-tick">✓</span> 100% mobile and tablet optimised</li>
-                            <li><span class="pricing-tick">✓</span> Direct contact and click-to-call buttons</li>
-                            <li><span class="pricing-tick">✓</span> 24/7 client text request line</li>
-                            <li><span class="pricing-tick">✓</span> Domain name included</li>
-                        </ul>
-                        <a href="contact.html" class="pricing-btn">Get built for £75</a>
-                    </div>
-
-                    <div class="pricing-card-new">
-                        <span class="pricing-badge">Multi-Page Build</span>
-                        <h3 style="font-size:1.55rem;font-weight:700;margin:6px 0 4px;color:#111;">Inbuilt with SEO</h3>
-                        <div style="font-size:2.4rem;font-weight:900;color:#111;line-height:1.1;margin:12px 0 4px;">£120 <span style="font-size:0.95rem;font-weight:400;color:#707070;">setup cost</span></div>
-                        <div style="font-size:1.1rem;font-weight:700;color:#E0562F;margin-bottom:16px;">Then £20 <span style="font-size:0.82rem;font-weight:400;color:#707070;">/month — domain included</span></div>
-                        <p style="font-size:0.9rem;color:#5c6770;line-height:1.6;margin-bottom:20px;min-height:60px;">A complete multi-page site engineered to pull in local search traffic. Built for trades that want their website actively winning them new leads — not just looking good.</p>
-                        <hr style="border:none;border-top:1px solid #e5e0d8;margin:0 0 18px;">
-                        <ul class="pricing-list">
-                            <li><span class="pricing-tick">✓</span> Everything in the Starter Page</li>
-                            <li><span class="pricing-tick">✓</span> Dedicated services and project gallery pages</li>
-                            <li><span class="pricing-tick">✓</span> <strong>Local SEO keywords built into the code</strong></li>
-                            <li><span class="pricing-tick">✓</span> Image optimisation and portfolio loading support</li>
-                            <li><span class="pricing-tick">✓</span> Continuous minor tweaks and content changes</li>
-                            <li><span class="pricing-tick">✓</span> Domain name included</li>
-                        </ul>
-                        <a href="contact.html" class="pricing-btn">Get built for £120</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-        <section id="portfolio" aria-labelledby="portfolio-heading" style="padding:64px 20px; background:#fdfbf7;">
-            <div class="container" style="max-width:1000px; margin:0 auto;">
-                <div style="text-align:center;">
-                    <h2 id="portfolio-heading">Our Work</h2>
-                    <p class="subtitle" style="max-width:670px;margin:12px auto 0;">Real projects we've built and worked on — from helping a local furniture business grow online to developing our own booking software.</p>
-                </div>
-                <div class="portfolio-grid">
-                    <article class="portfolio-card">
-                        <span class="portfolio-type">Business website &amp; digital marketing</span>
-                        <h3>Foxborough Furniture</h3>
-                        <p>Our family furniture restoration business in Kent. An example of a professional online presence built around services, local discovery and customer enquiries.</p>
-                        <a href="https://foxboroughfurniture.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Foxborough Furniture website">Visit website &rarr;</a>
-                    </article>
-                    <article class="portfolio-card">
-                        <span class="portfolio-type">Custom booking software</span>
-                        <h3>Grab&amp;Book</h3>
-                        <p>Our own appointment-booking platform, designed to give business owners control over availability, services and customer bookings, with tools for promotions and customer management.</p>
-                        <a href="https://grabandbook.com/" target="_blank" rel="noopener noreferrer" aria-label="Explore Grab and Book">Explore Grab&amp;Book &rarr;</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="sections-bg" style="padding: 60px 20px; background: #fdfbf7;">
-            <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
-
-                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                    <img src="mike-professional-more-leads-kent-jpg.jpeg" alt="Mike Marfurt, Founder of MoreLeads Kent" style="width: 100%; max-width: 320px; border-radius: 12px; object-fit: cover; aspect-ratio: 4/5; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
-                    <p style="margin-top: 14px; font-weight: 700; color: #111; font-size: 1rem;">Mike Marfurt</p>
-                    <p style="font-size: 0.82rem; color: #707070; margin-top: 3px;">Founder — MoreLeads Kent & Foxborough Furniture, Woodnesborough</p>
-                </div>
-
-                <div style="display: flex; flex-direction: column; gap: 24px;">
-                    <div class="about-text">
-                        <h2>I'm a local furniture maker who cracked the code on getting trades found online.</h2>
-                        <p style="margin-top: 16px;">Before I started buying, selling, and restoring furniture full-time after Covid, I spent years doing marketing and website UI for a multi-million-pound fire protection company. I learned firsthand how a great website doesn't just get you found — it adds real authority to your business.</p>
-                        <p style="margin-top: 12px;">When I launched <a href="https://foxboroughfurniture.com" target="_blank" rel="noopener" style="color: #E0562F; font-weight: bold; text-decoration: none;">Foxborough Furniture</a>, I saw what was happening: agencies overcharging by thousands, making custom websites completely unaffordable for new businesses. So I built my own site to generate leads — and I'm proud to say it's done exactly that.</p>
-                        <p style="margin-top: 12px;">By pairing my corporate marketing background with clean, custom-coded design, I bypassed the clunky templates and built something fast, clean, and effective.</p>
-                        <p style="margin-top: 12px;"><strong>My single goal now is to bridge that gap.</strong> I completely understand your budget, your timelines, and exactly what it takes to win local jobs. If you're winning, I'm winning.</p>
-                    </div>
-                    <div class="about-location-box" style="background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #e5e0d8;">
-                        <h3>Drop By / Call Anytime</h3>
-                        <p>We operate directly out of active business premises — no hidden ticketing support systems:</p>
-                        <p style="margin: 15px 0;"><strong>📍 Foxborough Furniture</strong><br>Foxborough Hill, Eastry, Kent, CT13 0NY</p>
-                        <p><strong>📞 24/7 Client Mobile Support Line:</strong><br><a href="tel:+447496797189" style="color: #E0562F; font-weight: bold; text-decoration: none; font-size: 1.2rem;">07496797189</a></p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="faqs" style="padding: 60px 20px;">
-            <div class="container max-width-md" style="max-width: 700px; margin: 0 auto;">
-                <h2 class="text-center" style="text-align: center; margin-bottom: 30px;">Frequently Asked Questions</h2>
-                <div class="faq-accordion">
-                    <div class="faq-item" style="border-bottom: 1px solid #e5e0d8; padding: 15px 0;">
-                        <button class="faq-toggle" aria-expanded="false" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">What is included in the £20 monthly package? <span>+</span></button>
-                        <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding-top: 5px; color: #5c6770;">
-                            <p>It covers your domain name, lightning-fast web server hosting, secure SSL generation, and an active line to us. If you need text edited or a seasonal hour adjusted, you text our mobile line and it gets handled under your subscription.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item" style="border-bottom: 1px solid #e5e0d8; padding: 15px 0;">
-                        <button class="faq-toggle" aria-expanded="false" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">What does "Local SEO built into code" mean? <span>+</span></button>
-                        <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding-top: 5px; color: #5c6770;">
-                            <p>Instead of just pasting basic text, we structure the underlying source code with local terms (like "Builder in Sandwich" or "Plumber near Deal"). This ensures search engines easily understand your exact geographic area right away.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item" style="border-bottom: 1px solid #e5e0d8; padding: 15px 0;">
-                        <button class="faq-toggle" aria-expanded="false" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">Are there long-term contract ties? <span>+</span></button>
-                        <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding-top: 5px; color: #5c6770;">
-                            <p>No. All maintenance contracts run strictly month-to-month. If your trade direction shifts or you decide it isn't a fit for your workload, you can cancel instantly with zero penalty fees.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer role="contentinfo" style="padding: 30px 20px; background: #000; color: #fff; text-align: center; font-size: 0.9rem;">
-        <div class="container footer-content">
-            <p>&copy; 2026 MoreLeads Kent. Fully managed local solutions. Built alongside Foxborough Furniture.</p>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow light"><span class="eyebrow-line"></span> INDEPENDENT WEB DESIGN · KENT</p>
+          <h1 id="hero-heading">Your business deserves more than <em>just a website.</em></h1>
+          <p class="hero-description">We build professional websites and practical digital tools that help local businesses look credible, get found and turn visits into enquiries.</p>
+          <div class="hero-actions"><a class="btn btn-orange" href="contact.html">Discuss your website <span aria-hidden="true">↗</span></a><a class="text-link hero-link" href="#work">Explore our work <span aria-hidden="true">↓</span></a></div>
+          <div class="hero-foot"><span class="status-dot" aria-hidden="true"></span> Based in East Kent. Your project, handled personally.</div>
         </div>
-    </footer>
+        <div class="hero-visual" aria-label="Screenshots of websites and software built by the MoreLeads Kent founder">
+          <div class="visual-topline"><span>MADE, NOT JUST PROMISED</span><span class="visual-arrows" aria-hidden="true">↗ ↗</span></div>
+          <div class="browser hero-browser">
+            <div class="browser-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser-address" id="hero-url">grabandbook.com</span><span class="browser-menu" aria-hidden="true">•••</span></div>
+            <div class="hero-shot-stack">
+              <img src="assets/grabandbook.svg" width="1440" height="791" alt="Grab&amp;Book booking software homepage, showing the booking management interface" id="hero-image" fetchpriority="high">
+            </div>
+          </div>
+          <div class="visual-switcher" role="group" aria-label="Featured project">
+            <button class="switch active" type="button" data-project="grab" aria-pressed="true">01 <span>Grab&amp;Book</span></button>
+            <button class="switch" type="button" data-project="room" aria-pressed="false">02 <span>Roomfound</span></button>
+            <button class="switch" type="button" data-project="fox" aria-pressed="false">03 <span>Foxborough</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="wrap hero-bottom" aria-label="Reasons to choose MoreLeads Kent"><span>Local, independent support</span><span>Our own businesses &amp; products</span><span>Clear, upfront starting prices</span></div>
+    </section>
 
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobLinks = mobileMenu.querySelectorAll('.mob-link');
+    <section class="work-section section-pad" id="work" aria-labelledby="work-heading">
+      <div class="wrap">
+        <div class="section-head split-head"><div><p class="eyebrow">01 / PROOF OF WORK</p><h2 id="work-heading">See what we <span class="serif-accent">actually build.</span></h2></div><p>Real work, not stock examples: two software products of our own and the website for our family restoration business.</p></div>
+        <div class="portfolio-grid">
+          <article class="project project-wide">
+            <a class="project-image project-book" href="https://grabandbook.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Grab and Book"><img src="assets/grabandbook.svg" width="1440" height="791" loading="lazy" alt="Screenshot of Grab&amp;Book homepage showing appointment diary software"><span class="image-corner" aria-hidden="true">↗</span></a>
+            <div class="project-info"><div><p class="project-kind">IN-HOUSE PRODUCT · CUSTOM SOFTWARE</p><h3>Grab&amp;Book</h3><p>Our own appointment-booking platform combining online bookings, availability controls, customer records and promotional tools in one place.</p></div><a class="project-link" href="https://grabandbook.com/" target="_blank" rel="noopener noreferrer">Explore the product <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project">
+            <a class="project-image project-room" href="https://ai-interior-design-kohl.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View Roomfound development preview"><img src="assets/roomfound.svg" width="1440" height="706" loading="lazy" alt="Screenshot of Roomfound room design website with furnished living-room hero"><span class="image-corner" aria-hidden="true">↗</span></a>
+            <div class="project-info"><div><p class="project-kind">IN DEVELOPMENT · DIGITAL PRODUCT</p><h3>Roomfound <span class="tiny-tag">In development</span></h3><p>An interior-design shopping concept exploring how room photography and visual design can make choosing furniture easier. Shared as an ongoing project.</p></div><a class="project-link" href="https://ai-interior-design-kohl.vercel.app/" target="_blank" rel="noopener noreferrer">View development preview <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project">
+            <a class="project-image project-fox" href="https://foxboroughfurniture.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Foxborough Furniture website"><img src="assets/foxborough.svg" width="1440" height="784" loading="lazy" alt="Screenshot of Foxborough Furniture website showing the logo, navigation and restoration homepage"><span class="image-corner" aria-hidden="true">↗</span></a>
+            <div class="project-info"><div><p class="project-kind">LOCAL BUSINESS · WEBSITE &amp; MARKETING</p><h3>Foxborough Furniture</h3><p>A family-run furniture restoration business in Kent, with a website centred on restoration services, trust and customer enquiries.</p></div><a class="project-link" href="https://foxboroughfurniture.com/" target="_blank" rel="noopener noreferrer">View live website <span aria-hidden="true">↗</span></a></div>
+          </article>
+        </div>
+        <p class="portfolio-note">These are our own businesses and projects, not presented as independent customer testimonials or completed client case studies.</p>
+      </div>
+    </section>
 
-        hamburger.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.toggle('open');
-            hamburger.classList.toggle('open', isOpen);
-            hamburger.setAttribute('aria-expanded', isOpen);
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
+    <section class="services-section section-pad" id="services" aria-labelledby="services-heading">
+      <div class="wrap"><div class="section-head"><p class="eyebrow">02 / WHAT WE DO</p><h2 id="services-heading">Good-looking is good.<br><span class="serif-accent">Useful is better.</span></h2><p>We consider what happens after someone lands on your site: can they find the right information, get in touch and take the next step?</p></div>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-index">01</span><div class="service-icon" aria-hidden="true">▤</div><h3>Websites that work</h3><p>Fast, mobile-friendly websites with clear service pages, obvious contact routes and a design that feels right for your business.</p><span class="service-detail">Web design · Responsive layouts · Enquiries</span></div>
+          <div class="service-card"><span class="service-index">02</span><div class="service-icon" aria-hidden="true">◎</div><h3>Built with search in mind</h3><p>Clear page structure, relevant local content and sensible on-page SEO foundations to help search engines understand what you do.</p><span class="service-detail">Local SEO foundations · Technical basics</span></div>
+          <div class="service-card service-dark"><span class="service-index">03</span><div class="service-icon" aria-hidden="true">▦</div><h3>Booking tools &amp; more</h3><p>Need more than a brochure site? Our own Grab&amp;Book platform connects online appointments, customer records and promotional tools. See how it could support your business.</p><a class="service-detail service-feature-link" href="#booking">Explore Grab&amp;Book <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+    </section>
 
-        mobLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                hamburger.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            });
-        });
 
-        document.querySelectorAll('.faq-toggle').forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const content = toggle.nextElementSibling;
-                const icon = toggle.querySelector('span');
-                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-                if (isExpanded) {
-                    content.style.maxHeight = null;
-                    icon.textContent = '+';
-                    toggle.setAttribute('aria-expanded', 'false');
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    icon.textContent = '−';
-                    toggle.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-    </script>
+    <section class="booking-section section-pad" id="booking" aria-labelledby="booking-heading">
+      <div class="wrap">
+        <div class="section-head split-head booking-section-head">
+          <div><p class="eyebrow">03 / MORE THAN A WEBSITE</p><h2 id="booking-heading">Take bookings.<br><span class="serif-accent">Build repeat business.</span></h2></div>
+          <p>A great website gets people interested. Our own booking platform, Grab&amp;Book, helps appointment-based businesses turn that interest into bookings — and look after the customers who return.</p>
+        </div>
+        <div class="booking-showcase">
+          <div class="booking-showcase-copy">
+            <div class="booking-product-label"><span class="booking-product-mark" aria-hidden="true">✓</span><strong>Grab<span>&amp;</span>Book</strong><span class="booking-tag">BUILT BY US</span></div>
+            <h3>Less time arranging appointments. <em>More time running your business.</em></h3>
+            <p>Give customers a straightforward way to book while you stay in control of your diary, services and availability. Keep bookings and customer information connected instead of juggling different tools.</p>
+            <div class="booking-showcase-actions">
+              <a class="btn btn-orange" href="https://grabandbook.com/" target="_blank" rel="noopener noreferrer">Explore Grab&amp;Book <span aria-hidden="true">↗</span></a>
+              <a class="text-link booking-link" href="contact.html?package=booking">Ask about adding bookings <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="booking-product-visual">
+            <div class="booking-visual-topline"><span>THE SOFTWARE BEHIND THE SERVICE</span><span>↗</span></div>
+            <div class="browser booking-browser">
+              <div class="browser-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser-address">grabandbook.com</span><span class="browser-menu" aria-hidden="true">•••</span></div>
+              <img src="assets/grabandbook.svg" width="1440" height="791" loading="lazy" alt="Grab&amp;Book homepage with an appointment diary illustration and product introduction">
+            </div>
+          </div>
+        </div>
+        <div class="booking-benefits" aria-label="Benefits of Grab and Book">
+          <article class="booking-benefit"><span class="booking-benefit-number">01</span><h3>Bookings without the back-and-forth.</h3><p>Let customers choose available appointment times online instead of relying on calls and messages to arrange every visit.</p></article>
+          <article class="booking-benefit"><span class="booking-benefit-number">02</span><h3>Know the customer, not just the appointment.</h3><p>Bring customer records and booking history together, so it's easier to recognise returning customers and make their next visit personal.</p></article>
+          <article class="booking-benefit"><span class="booking-benefit-number">03</span><h3>Give customers a reason to come back.</h3><p>Use promotional offers and customer information to support rebooking and build longer-term relationships.</p></article>
+          <article class="booking-benefit"><span class="booking-benefit-number">04</span><h3>See what's helping you grow.</h3><p>Understand appointment activity and customer trends, so you can make better-informed decisions about your business.</p></article>
+        </div>
+        <div class="booking-bottom-line"><p><strong>And the follow-up?</strong> Ask us about booking confirmations, rescheduling and reminder options available with your setup. Grab&amp;Book is separate software, not included in our £75 or £120 website packages; software pricing and integration are discussed separately.</p><a href="contact.html?package=booking">Discuss booking tools <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="process-section section-pad" id="process" aria-labelledby="process-heading"><div class="wrap"><div class="section-head split-head"><div><p class="eyebrow">04 / THE PROCESS</p><h2 id="process-heading">Simple from <span class="serif-accent">day one.</span></h2></div><p>You don't need to understand hosting, code or website builders. We explain the options and handle the technical work we agree on.</p></div>
+      <div class="step-grid"><div class="step"><span class="step-number">01<span class="step-rule"></span></span><h3>Tell us what you need.</h3><p>Share your business, your goals and what you need the website to do. We'll ask a few useful questions and clarify the scope.</p></div><div class="step"><span class="step-number">02<span class="step-rule"></span></span><h3>We design and build.</h3><p>You review the proposed website and provide feedback. We refine the agreed pages, content and contact routes.</p></div><div class="step"><span class="step-number">03<span class="step-rule"></span></span><h3>Launch with support.</h3><p>We connect the domain, launch the site and explain the ongoing hosting and support arrangement before you commit.</p></div></div>
+      <a class="text-link dark-link" href="contact.html">Start a conversation <span aria-hidden="true">↗</span></a></div></section>
+
+    <section class="about-section section-pad" id="about" aria-labelledby="about-heading"><div class="wrap about-grid"><div class="about-stamp"><span class="stamp-top">MORE THAN A WEB DESIGNER</span><strong>LOCAL<br>BUSINESS<br>KNOW-HOW<span>.</span></strong><span class="stamp-foot">BUILT IN KENT, FOR KENT</span></div><div class="about-content"><p class="eyebrow">05 / WHO YOU'RE WORKING WITH</p><h2 id="about-heading">A real person.<br><span class="serif-accent">A real local business.</span></h2><p>I'm Mike, the person behind MoreLeads Kent. I have hands-on experience in website design, digital marketing and customer acquisition — and I also work in my family's furniture restoration business here in East Kent.</p><p>That combination matters: I understand the pressure of running a small business, the importance of answering enquiries, and why a website needs to earn its place in your budget.</p><p>You deal directly with me, from the first conversation to reviewing your website. I'll recommend the features your business actually needs, not the most expensive package.</p><div class="about-quote">“Your website should make it easier for customers to choose you.”</div><a class="text-link dark-link" href="contact.html">Speak directly with Mike <span aria-hidden="true">↗</span></a></div></div></section>
+
+    <section class="pricing-section section-pad" id="pricing" aria-labelledby="pricing-heading"><div class="wrap"><div class="section-head split-head"><div><p class="eyebrow">06 / TRANSPARENT PRICING</p><h2 id="pricing-heading">Professional shouldn't mean <span class="serif-accent">out of reach.</span></h2></div><p>Clear entry-level website packages, with an ongoing monthly charge for hosting and agreed support. We'll confirm the full scope before work begins.</p></div>
+      <div class="pricing-grid"><article class="price-card"><div class="tier-top"><span>THE STARTER PAGE</span><span>01 / ONE PAGE</span></div><h3>Everything essential.<br>Nothing unnecessary.</h3><div class="price-row"><strong>£75</strong><span>starting setup price</span></div><p class="monthly">Then <strong>£20/month</strong> for hosting &amp; agreed maintenance</p><ul class="ticks"><li>Custom one-page website</li><li>Mobile-friendly design</li><li>Clear call and enquiry buttons</li><li>Domain connection and hosting</li><li>Ongoing agreed content support</li></ul><a class="btn btn-outline" href="contact.html?package=starter">Enquire about Starter <span aria-hidden="true">↗</span></a></article>
+      <article class="price-card price-featured"><div class="tier-top"><span>THE MULTI-PAGE SITE</span><span>02 / GROWING BUSINESS</span></div><h3>More space to<br>show what you do.</h3><div class="price-row"><strong>£120</strong><span>starting setup price</span></div><p class="monthly">Then <strong>£20/month</strong> for hosting &amp; agreed maintenance</p><ul class="ticks"><li>Multiple pages for key services</li><li>Local SEO page foundations</li><li>Project/gallery page support</li><li>Mobile-friendly design &amp; hosting</li><li>Ongoing agreed content support</li></ul><a class="btn btn-orange" href="contact.html?package=multipage">Enquire about Multi-page <span aria-hidden="true">↗</span></a></article></div>
+      <div class="price-explain"><div><h3>How can the prices be so low?</h3><p>MoreLeads Kent is an independent, lean operation, with straightforward starter packages rather than a large agency overhead. These prices apply to the package scopes shown — more complex requirements are quoted separately.</p></div><div><h3>What's included in the £20/month?</h3><p>Ongoing hosting and routine support within an agreed scope. We'll confirm the number and type of revisions, the domain arrangements and any exclusions in writing before you go ahead.</p></div></div>
+      <p class="pricing-disclaimer">Prices are starting prices for the listed website packages, not for custom booking software. Domain registration, ownership, cancellation terms and additional work should be confirmed in your written quote before purchase. No minimum-term or ranking guarantees are implied here.</p>
+    </div></section>
+
+    <section class="faq-section section-pad" aria-labelledby="faq-heading"><div class="wrap faq-grid"><div><p class="eyebrow">07 / GOOD TO KNOW</p><h2 id="faq-heading">Questions worth <span class="serif-accent">asking.</span></h2></div><div class="faq-list"><details><summary>Will I be able to see the website before it goes live?<span aria-hidden="true">+</span></summary><p>Yes. We'll agree a review stage before launch so you can give feedback on the pages we're building.</p></details><details><summary>Do I need to understand hosting or domains?<span aria-hidden="true">+</span></summary><p>No. We'll explain how your domain and hosting are managed and who owns them before any launch.</p></details><details><summary>Can I use Grab&amp;Book with my website?<span aria-hidden="true">+</span></summary><p>Yes, depending on your website and requirements. <a href="#booking">Grab&amp;Book</a> is our separate booking and customer-management product. It is not included in the £75 or £120 website packages; we'll explain software pricing, setup and any integration costs before you commit.</p></details><details><summary>Who owns my website and domain?<span aria-hidden="true">+</span></summary><p>We will explain domain ownership, hosting access and what happens if you decide to move your site before you agree to the service. You should have these arrangements in writing.</p></details><details><summary>What if I need more than the standard package?<span aria-hidden="true">+</span></summary><p>Tell us what you're after. Larger sites, special integrations and custom functionality can be scoped and quoted separately.</p></details></div></div></section>
+    <section class="last-cta" aria-labelledby="cta-heading"><div class="wrap cta-row"><div><p class="eyebrow light">LET'S TALK ABOUT YOUR BUSINESS</p><h2 id="cta-heading">Ready for a website that <span class="serif-accent">means business?</span></h2><p>Tell us what you do and what you'd like your website to achieve. No jargon or long sales process.</p></div><div class="cta-actions"><a class="btn btn-orange" href="contact.html">Ask for a website quote <span aria-hidden="true">↗</span></a><a href="tel:+447496797189">Or call 07496 797189</a></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-row"><div><a class="brand footer-brand" href="#top"><span class="brand-mark">M<span class="mark-dot">.</span></span><span>More<span class="brand-accent">Leads</span><small>KENT</small></span></a><p>Independent websites and digital tools for Kent businesses.</p></div><div><p class="footer-label">EXPLORE</p><a href="#work">Our work</a><a href="#booking">Grab&amp;Book</a><a href="#services">Services</a><a href="#pricing">Pricing</a></div><div><p class="footer-label">CONTACT</p><a href="contact.html">Send an enquiry</a><a href="tel:+447496797189">07496 797189</a><span>East Kent, England</span></div></div><div class="wrap footer-bottom"><span>© <span id="year">2026</span> MoreLeads Kent</span><a href="privacy.html">Privacy notice</a><a href="#top">Back to top ↑</a></div></footer>
+  <script src="script.js" defer></script>
 </body>
 </html>

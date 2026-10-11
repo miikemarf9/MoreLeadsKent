@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#E0562F"/>
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="13" fill="#ffffff" letter-spacing="-0.5">ML</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#141a21"/><path d="M13 45V19h7l12 15 12-15h7v26h-8V31L32 44 21 31v14z" fill="#fff"/><circle cx="51" cy="49" r="5" fill="#e66a45"/></svg>
