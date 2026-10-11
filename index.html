@@ -316,6 +316,17 @@
             color: #fff;
         }
 
+
+        /* Portfolio */
+        .portfolio-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; margin-top:32px; text-align:left; }
+        .portfolio-card { background:#fff; border:1px solid #e5e0d8; border-radius:12px; padding:30px; display:flex; flex-direction:column; gap:12px; }
+        .portfolio-card .portfolio-type { color:#E0562F; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+        .portfolio-card h3 { margin:0; color:#111; font-size:1.45rem; }
+        .portfolio-card p { margin:0; color:#5c6770; line-height:1.65; font-size:.92rem; }
+        .portfolio-card a { margin-top:auto; padding-top:10px; color:#c44b29; font-weight:700; text-decoration:none; }
+        .portfolio-card a:hover { text-decoration:underline; }
+        @media(max-width:650px) { .portfolio-grid { grid-template-columns:1fr; } .portfolio-card { padding:24px; } }
+
         /* ── Responsive ── */
         @media (max-width: 768px) {
             .hamburger { display: flex !important; }
@@ -335,6 +346,7 @@
             </a>
             <nav aria-label="Primary Navigation">
                 <a href="index.html">Home</a>
+                <a href="#portfolio">Our Work</a>
                 <a href="contact.html">Contact</a>
             </nav>
             <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -345,6 +357,7 @@
 
     <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile Navigation">
         <a href="index.html" class="mob-link">Home</a>
+        <a href="#portfolio" class="mob-link">Our Work</a>
         <a href="contact.html" class="mob-link">Contact</a>
     </div>
 
@@ -428,6 +441,30 @@
                         <a href="contact.html" class="pricing-btn">Get built for £120</a>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+
+        <section id="portfolio" aria-labelledby="portfolio-heading" style="padding:64px 20px; background:#fdfbf7;">
+            <div class="container" style="max-width:1000px; margin:0 auto;">
+                <div style="text-align:center;">
+                    <h2 id="portfolio-heading">Our Work</h2>
+                    <p class="subtitle" style="max-width:670px;margin:12px auto 0;">Real projects we've built and worked on — from helping a local furniture business grow online to developing our own booking software.</p>
+                </div>
+                <div class="portfolio-grid">
+                    <article class="portfolio-card">
+                        <span class="portfolio-type">Business website &amp; digital marketing</span>
+                        <h3>Foxborough Furniture</h3>
+                        <p>Our family furniture restoration business in Kent. An example of a professional online presence built around services, local discovery and customer enquiries.</p>
+                        <a href="https://foxboroughfurniture.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Foxborough Furniture website">Visit website &rarr;</a>
+                    </article>
+                    <article class="portfolio-card">
+                        <span class="portfolio-type">Custom booking software</span>
+                        <h3>Grab&amp;Book</h3>
+                        <p>Our own appointment-booking platform, designed to give business owners control over availability, services and customer bookings, with tools for promotions and customer management.</p>
+                        <a href="https://grabandbook.com/" target="_blank" rel="noopener noreferrer" aria-label="Explore Grab and Book">Explore Grab&amp;Book &rarr;</a>
+                    </article>
                 </div>
             </div>
         </section>
