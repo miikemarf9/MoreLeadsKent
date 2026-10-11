@@ -44,7 +44,8 @@ jobs:
       - name: Install Wrangler
         run: npm install --no-save --no-package-lock wrangler@4
 
-      - name: Deploy to existing Cloudflare Pages project        uses: cloudflare/wrangler-action@v4
+      - name: Deploy to existing Cloudflare Pages project
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: faf3fd0d8a5e4ea8c386e156046a2933
