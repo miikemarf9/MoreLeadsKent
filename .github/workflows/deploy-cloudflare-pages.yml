@@ -28,8 +28,8 @@ jobs:
           cp -R assets dist/assets
           test -f dist/index.html
           test -f dist/assets/grabandbook.svg
-          test -f dist/assets/roomfound.svg
-          test -f dist/assets/foxborough.svg
+          test -f dist/assets/transform-my-room.webp
+          test -f dist/assets/foxborough-current.webp
 
       - name: Check Cloudflare deployment credentials
         env:

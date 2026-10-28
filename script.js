@@ -9,8 +9,8 @@ if(toggle&&mobileNav){
 }
 const projects={
  grab:{src:'assets/grabandbook.webp',url:'grabandbook.com',alt:'Grab&Book appointment booking software screenshot'},
- fox:{src:'assets/foxborough.webp',url:'foxboroughfurniture.com',alt:'Foxborough Furniture restoration business website screenshot'},
- room:{src:'assets/roomfound.webp',url:'Roomfound development preview',alt:'Roomfound interior design website screenshot'}
+ fox:{src:'assets/foxborough-current.webp',url:'foxboroughfurniture.com',alt:'Foxborough Furniture restoration business website screenshot'},
+ room:{src:'assets/transform-my-room.webp',url:'Transform My Room',alt:'Transform My Room room design and furniture selection homepage'}
 };
 const heroImage=document.getElementById('hero-image');
 const heroUrl=document.getElementById('hero-url');
