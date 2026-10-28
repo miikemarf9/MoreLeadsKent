@@ -8,9 +8,9 @@ if(toggle&&mobileNav){
   document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
 }
 const projects={
- grab:{src:'assets/grabandbook.webp',url:'grabandbook.com',alt:'Grab&Book appointment booking software screenshot'},
- fox:{src:'assets/foxborough-current.webp',url:'foxboroughfurniture.com',alt:'Foxborough Furniture restoration business website screenshot'},
- room:{src:'assets/transform-my-room.webp',url:'Transform My Room',alt:'Transform My Room room design and furniture selection homepage'}
+ grab:{src:'assets/grabandbook.webp?v=20261028a',url:'grabandbook.com',alt:'Grab&Book appointment booking software screenshot'},
+ fox:{src:'assets/foxborough-current.webp?v=20261028a',url:'foxboroughfurniture.com',alt:'Current Foxborough Furniture restoration homepage and workshop'},
+ room:{src:'assets/transform-my-room.webp?v=20261028a',url:'transformmyroom.com',alt:'Current Transform My Room homepage with room designs and furniture selections'}
 };
 const heroImage=document.getElementById('hero-image');
 const heroUrl=document.getElementById('hero-url');
